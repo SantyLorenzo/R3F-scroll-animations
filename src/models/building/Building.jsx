@@ -14,7 +14,7 @@ export function Building(props) {
     actions['Action.008'].play()
     console.log(nodes['CameraHelperCube'].position)
 
-    console.log(nodes)
+    // console.log(nodes)
   }, [])
 
 
