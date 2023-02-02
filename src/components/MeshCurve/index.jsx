@@ -1,0 +1,2 @@
+export { MeshCurve } from './MeshCurve'
+
