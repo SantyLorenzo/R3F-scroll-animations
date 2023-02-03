@@ -1,51 +1,22 @@
 import './App.css';
 import { Canvas} from '@react-three/fiber';
-import { Building } from './models/building';
-import { Environment, OrbitControls, Scroll, ScrollControls } from '@react-three/drei';
+import { Building } from './models';
+import { Environment, OrbitControls, Scroll, ScrollControls, Sky, Stars } from '@react-three/drei';
 
 function App() {
   return (
-    <Canvas
-      style={{
-        width: '100vw',
-        height: '100vh'
-      }}
-      camera={{
-        zoom: 1,
-        fov: 50,
-      }}
-    >
+    <Canvas>
       <Environment preset="city" />
+      <Sky sunPosition={[0, 0, 0]} />
+      <Stars radius={100} depth={0} count={5000} factor={4} saturation={0} speed={0.1} />
 
-      <ScrollControls pages={3}>
+      <ScrollControls pages={5}>
         <Building />
 
-        <Scroll html style={{ width: '100%' }}>
-          <h1 
-            style={{
-              top: '10vh',
-              left: '10vw',
-              fontSize: '4em',
-              position: 'absolute',
-            }}
-          >
-            scroll down
-          </h1>
-
-          <h1 
-            style={{
-              top: '280vh',
-              left: '10vw',
-              fontSize: '4em',
-              position: 'absolute',
-            }}
-          >
-            scroll up
-          </h1>
-
+        <Scroll html className='scroll'>
+          <h1 className='title-1'>Room Tour WIP</h1>
+          <h1 className='title-2'>scroll up</h1>
         </Scroll>
-
-        <OrbitControls enableZoom={false} />
       </ScrollControls>
     </Canvas>
   );

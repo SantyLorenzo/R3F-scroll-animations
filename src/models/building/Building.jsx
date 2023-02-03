@@ -1,43 +1,34 @@
 import * as THREE from "three";
 import React, { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
+import { useGLTF, useAnimations, useScroll, Environment } from "@react-three/drei";
 
 export function Building(props) {
   const group = useRef();
   const scroll = useScroll();
   const cameraRef = useRef(null)
-  const trackingCameraRef = useRef(null)
   const { nodes, materials, animations } = useGLTF("/building.glb");
   const { actions } = useAnimations(animations, group);
 
-  useEffect(() => {
-    actions['Action.008'].play()
-  }, [actions])
+  // start and pause the animation
+  useEffect(() => actions['Action.008'].play().paused = true, [actions])
 
   useFrame((state) => {
-
-    console.log(actions["Action.008"].getClip().duration * scroll.offset)
-
-    // // if (actions["Action.008"].getClip().duration * scroll.offset === 0) {
-      
-    state.camera.rotation.x = cameraRef.current.rotation.x 
-    
-      state.camera.rotation.x = cameraRef.current.rotation.x 
-      state.camera.rotation.y = - cameraRef.current.rotation.y
-      state.camera.rotation.z = cameraRef.current.rotation.z
-    // }
-
+    // update camera position
     state.camera.position.x = cameraRef.current.position.x
     state.camera.position.y = cameraRef.current.position.y
     state.camera.position.z = cameraRef.current.position.z
 
-    // state.camera.lookAt(trackingCameraRef.current.position.x, trackingCameraRef.current.position.y, trackingCameraRef.current.position.z)
-
+    // update camera rotation
+    state.camera.rotation.x = cameraRef.current.rotation.x 
+    state.camera.rotation.y = - cameraRef.current.rotation.y
+    state.camera.rotation.z = cameraRef.current.rotation.z
+    
+    // play the animation based on the offset of the scroll
     actions["Action.008"].time = THREE.MathUtils.lerp(
       actions["Action.008"].time,
       actions["Action.008"].getClip().duration * scroll.offset,
-      0.05
+      1
     )
   })
 
@@ -50,7 +41,6 @@ export function Building(props) {
           rotation={[0, 0.51, 0]}
         />
         <group
-          ref={trackingCameraRef}
           name="Curve_tracking_camera"
           position={[-2.35, -1.35, -0.75]}
           scale={2.42}
