@@ -2,7 +2,6 @@ import * as THREE from "three";
 import React, { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
-import { useControls } from "leva";
 
 export function Building(props) {
   const group = useRef();
