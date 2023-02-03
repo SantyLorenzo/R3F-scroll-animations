@@ -1,11 +1,11 @@
 import './App.css';
 import { Canvas} from '@react-three/fiber';
 import { Building } from './models';
-import { Environment, OrbitControls, Scroll, ScrollControls, Sky, Stars } from '@react-three/drei';
+import { Environment, Scroll, ScrollControls, Sky, Stars } from '@react-three/drei';
 
 function App() {
   return (
-    <Canvas>
+    <Canvas>  
       <Environment preset="city" />
       <Sky sunPosition={[0, 0, 0]} />
       <Stars radius={100} depth={0} count={5000} factor={4} saturation={0} speed={0.1} />

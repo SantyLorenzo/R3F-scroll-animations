@@ -1,28 +1,28 @@
 import * as THREE from "three";
-import React, { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF, useAnimations, useScroll, Environment } from "@react-three/drei";
+import React, { useEffect, useRef } from "react";
+import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
 
 export function Building(props) {
   const group = useRef();
   const scroll = useScroll();
-  const cameraRef = useRef(null)
+  const cameraHelperRef = useRef(null)
   const { nodes, materials, animations } = useGLTF("/building.glb");
   const { actions } = useAnimations(animations, group);
 
-  // start and pause the animation
+  // start and pause the animation on mount
   useEffect(() => actions['Action.008'].play().paused = true, [actions])
 
   useFrame((state) => {
     // update camera position
-    state.camera.position.x = cameraRef.current.position.x
-    state.camera.position.y = cameraRef.current.position.y
-    state.camera.position.z = cameraRef.current.position.z
+    state.camera.position.x = cameraHelperRef.current.position.x
+    state.camera.position.y = cameraHelperRef.current.position.y
+    state.camera.position.z = cameraHelperRef.current.position.z
 
     // update camera rotation
-    state.camera.rotation.x = cameraRef.current.rotation.x 
-    state.camera.rotation.y = - cameraRef.current.rotation.y
-    state.camera.rotation.z = cameraRef.current.rotation.z
+    state.camera.rotation.x = cameraHelperRef.current.rotation.x 
+    state.camera.rotation.y = - cameraHelperRef.current.rotation.y
+    state.camera.rotation.z = cameraHelperRef.current.rotation.z
     
     // play the animation based on the offset of the scroll
     actions["Action.008"].time = THREE.MathUtils.lerp(
@@ -46,7 +46,7 @@ export function Building(props) {
           scale={2.42}
         />
         <mesh
-          ref={cameraRef}
+          ref={cameraHelperRef}
           name="CameraHelperCube"
           castShadow
           receiveShadow
