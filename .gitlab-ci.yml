@@ -1,0 +1,68 @@
+stages:
+  - build
+  - deploy
+
+cache:
+  key:
+    files:
+      - package.json
+  paths:
+    - node_modules
+  policy: pull
+
+.build: &build
+  stage: build
+  image: node:16-alpine
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 day
+  script:
+    # Dependencies
+    - yarn install --frozen-lockfile
+    # Linting
+    - yarn lint
+    # Build
+    - yarn build:$BUILD_MODE
+
+.deploy: &deploy
+  stage: deploy
+  image: alpine
+  script:
+    # Deploy
+    - apk add --no-cache openssh-client rsync
+    - eval $(ssh-agent -s)
+    - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+    - echo "PubkeyAcceptedKeyTypes +ssh-rsa" >> ~/.ssh/config && chmod 644 ~/.ssh/config
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa && ssh-add ~/.ssh/id_rsa
+    - ssh-keyscan $DEPLOY_HOST >> ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
+
+    - rsync -avzp --delete ./dist/* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_FOLDER
+
+build_production:
+  extends: .build
+  variables:
+    BUILD_MODE: production
+  only:
+    - master
+
+build_develop:
+  extends: .build
+  variables:
+    BUILD_MODE: dev
+  except:
+    - master
+
+deploy_production:
+  extends: .deploy
+  variables:
+    DEPLOY_FOLDER: $DEPLOY_FOLDER_PROD
+  only:
+    - master
+
+deploy_develop:
+  extends: .deploy
+  variables:
+    DEPLOY_FOLDER: $DEPLOY_FOLDER_DEV
+  only:
+    - dev

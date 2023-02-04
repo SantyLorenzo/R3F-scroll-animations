@@ -2,34 +2,43 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
+import { GLTFAction, GLTFResult } from "./types";
 
-export function Building(props) {
-  const group = useRef();
+export function Building(props: JSX.IntrinsicElements["group"]) {
   const scroll = useScroll();
-  const cameraHelperRef = useRef(null)
-  const { nodes, materials, animations } = useGLTF("/building.glb");
-  const { actions } = useAnimations(animations, group);
+  const group = useRef<THREE.Group>(null);
+  const cameraHelperRef = useRef<THREE.Mesh>(null)
+  const { nodes, materials, animations } = useGLTF("/building.glb") as unknown as GLTFResult
+  const { actions } = useAnimations<GLTFAction>(animations, group)
 
-  // start and pause the animation on mount
-  useEffect(() => actions['Action.008'].play().paused = true, [actions])
+  useEffect(() => {
+    if (actions["Action.008"]) {
+      // start and pause the camera animation on mount
+      actions["Action.008"].play().paused = true
+    }
+  }, [actions])
 
   useFrame((state) => {
-    // update camera position
-    state.camera.position.x = cameraHelperRef.current.position.x
-    state.camera.position.y = cameraHelperRef.current.position.y
-    state.camera.position.z = cameraHelperRef.current.position.z
+    if (cameraHelperRef.current) {
+      // update camera position
+      state.camera.position.x = cameraHelperRef.current.position.x
+      state.camera.position.y = cameraHelperRef.current.position.y
+      state.camera.position.z = cameraHelperRef.current.position.z
 
-    // update camera rotation
-    state.camera.rotation.x = cameraHelperRef.current.rotation.x 
-    state.camera.rotation.y = - cameraHelperRef.current.rotation.y
-    state.camera.rotation.z = cameraHelperRef.current.rotation.z
-    
-    // play the animation based on the offset of the scroll
-    actions["Action.008"].time = THREE.MathUtils.lerp(
-      actions["Action.008"].time,
-      actions["Action.008"].getClip().duration * scroll.offset,
-      1
-    )
+      // update camera rotation
+      state.camera.rotation.x = - cameraHelperRef.current.rotation.x * 2
+      state.camera.rotation.y = - cameraHelperRef.current.rotation.y * 1
+      state.camera.rotation.z = - cameraHelperRef.current.rotation.z * 2
+    }
+
+    if (actions["Action.008"]) {
+      // play the animation based on the offset of the scroll
+      actions["Action.008"].time = THREE.MathUtils.lerp(
+        actions["Action.008"].time,
+        actions["Action.008"].getClip().duration * scroll.offset,
+        1
+      )
+    }
   })
 
   return (
