@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <ScrollControls pages={5}>
           <Building />
           <Scroll html className="scroll">
-            <h1 className="title-1">Room Tour WIP</h1>
+            <h1 className="title-1">Camera animation based on scroll  WIP</h1>
             <h1 className="title-2">scroll up</h1>
           </Scroll>
         </ScrollControls>
