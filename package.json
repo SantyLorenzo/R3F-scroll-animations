@@ -7,7 +7,7 @@
     "start": "vite --open",
     "lint": "tsc",
     "build:production": "vite build --mode production",
-    "build:dev": "vite build --mode dev",
+    "build": "vite build --mode dev",
     "prepare": "husky install",
     "test": ""
   },
