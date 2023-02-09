@@ -1,45 +1,49 @@
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
-import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
+import { useGLTF, useAnimations, useScroll, OrbitControls } from "@react-three/drei";
 import { GLTFAction, GLTFResult } from "./types";
 
 export function Building(props: JSX.IntrinsicElements["group"]) {
   const scroll = useScroll();
   const group = useRef<THREE.Group>(null);
+  const caseObjectRef = useRef<THREE.Mesh>(null)
   const cameraHelperRef = useRef<THREE.Mesh>(null)
+  const whatWeDoObjectRef = useRef<THREE.Mesh>(null)
   const { nodes, materials, animations } = useGLTF("/building.glb") as unknown as GLTFResult
   const { actions } = useAnimations<GLTFAction>(animations, group)
 
   useEffect(() => {
-    if (actions["Action.008"]) {
-      // start and pause the camera animation on mount
-      actions["Action.008"].play().paused = true
+    if (actions['cameraHelperPath']) {
+      actions["cameraHelperPath"].play().paused = true
     }
-  }, [actions])
+  }, [])
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
     if (cameraHelperRef.current) {
-      // update camera position
-      state.camera.position.x = cameraHelperRef.current.position.x
-      state.camera.position.y = cameraHelperRef.current.position.y
-      state.camera.position.z = cameraHelperRef.current.position.z
-
-      // update camera rotation
-      state.camera.rotation.x = - cameraHelperRef.current.rotation.x * 2
-      state.camera.rotation.y = - cameraHelperRef.current.rotation.y * 1
-      state.camera.rotation.z = - cameraHelperRef.current.rotation.z * 2
+      state.camera.zoom = 2.2
+      state.camera.position.copy(cameraHelperRef.current.position)
+      state.camera.rotation.copy(cameraHelperRef.current.rotation)
+      state.camera.rotation.y += Math.PI
     }
 
-    if (actions["Action.008"]) {
+    if (actions["cameraHelperPath"]) {
       // play the animation based on the offset of the scroll
-      actions["Action.008"].time = THREE.MathUtils.lerp(
-        actions["Action.008"].time,
-        actions["Action.008"].getClip().duration * scroll.offset,
+      actions["cameraHelperPath"].time = THREE.MathUtils.lerp(
+        actions["cameraHelperPath"].time,
+        actions["cameraHelperPath"].getClip().duration * scroll.offset,
         1
       )
     }
-  })
+
+    if (whatWeDoObjectRef.current) {
+      whatWeDoObjectRef.current.rotation.y += delta * 0.2
+    }
+
+    if (caseObjectRef.current) {
+      caseObjectRef.current.rotation.y += delta * 0.2
+    }
+  })  
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -105,6 +109,7 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
           scale={[0.19, 0.19, 0.31]}
         />
         <mesh
+          ref={caseObjectRef}
           name="Object_case"
           castShadow
           receiveShadow
@@ -115,6 +120,7 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
           scale={0.36}
         />
         <mesh
+          ref={whatWeDoObjectRef}
           name="Object_what_we_do"
           castShadow
           receiveShadow

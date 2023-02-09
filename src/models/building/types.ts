@@ -1,7 +1,7 @@
 import { GLTF } from "three-stdlib"
 import * as THREE from "three";
 
-export type ActionName = "Action.008" | "Action.004" | "Action.005" | "Circle.007Action"
+export type ActionName = "cameraPath" | "cameraHelperPath" | "topDoor" | "bottomDoor" | "spinsApps"
 
 export interface GLTFAction extends THREE.AnimationClip {
     name: ActionName;
