@@ -14,8 +14,15 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
   const { actions } = useAnimations<GLTFAction>(animations, group)
 
   useEffect(() => {
+    // Initialize the camera animation
     if (actions['cameraHelperPath']) {
       actions["cameraHelperPath"].play().paused = true
+    }
+
+    // Initialize the doors animation
+    if (actions['topDoor'] && actions['bottomDoor']) {
+      actions["topDoor"].play().paused = true
+      actions["bottomDoor"].play().paused = true
     }
   }, [])
 
@@ -27,13 +34,23 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
       state.camera.rotation.y += Math.PI
     }
 
-    if (actions["cameraHelperPath"]) {
-      // play the animation based on the offset of the scroll
+    if (actions["cameraHelperPath"] && actions['topDoor'] && actions['bottomDoor']) {
+      // play the camera animation based on the offset of the scroll
       actions["cameraHelperPath"].time = THREE.MathUtils.lerp(
         actions["cameraHelperPath"].time,
         actions["cameraHelperPath"].getClip().duration * scroll.offset,
         1
       )
+
+      actions["bottomDoor"].time =
+        actions["cameraHelperPath"].time /
+        actions["bottomDoor"].getClip().duration *
+        actions["bottomDoor"].getClip().duration
+
+      actions["topDoor"].time =
+        actions["cameraHelperPath"].time /
+        actions["topDoor"].getClip().duration *
+        actions["topDoor"].getClip().duration
     }
 
     if (whatWeDoObjectRef.current) {
@@ -43,7 +60,7 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
     if (caseObjectRef.current) {
       caseObjectRef.current.rotation.y += delta * 0.2
     }
-  })  
+  })
 
   return (
     <group ref={group} {...props} dispose={null}>
