@@ -1,41 +1,52 @@
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
-import { useGLTF, useAnimations, useScroll, OrbitControls } from "@react-three/drei";
+import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
 import { GLTFAction, GLTFResult } from "./types";
 
 export function Building(props: JSX.IntrinsicElements["group"]) {
-  const scroll = useScroll();
-  const group = useRef<THREE.Group>(null);
+  const scroll = useScroll()
+  const group = useRef<THREE.Group>(null)
+  const movingAppsRef = useRef<THREE.Mesh>(null)
   const caseObjectRef = useRef<THREE.Mesh>(null)
+  const worldObjectRef = useRef<THREE.Mesh>(null)
   const cameraHelperRef = useRef<THREE.Mesh>(null)
   const whatWeDoObjectRef = useRef<THREE.Mesh>(null)
   const { nodes, materials, animations } = useGLTF("/building.glb") as unknown as GLTFResult
   const { actions } = useAnimations<GLTFAction>(animations, group)
 
   useEffect(() => {
-    // Initialize the camera animation
-    if (actions['cameraHelperPath']) {
+    // Initialize animations
+    if (
+      actions['topDoor'] &&
+      actions["spinsApps"] &&
+      actions['bottomDoor'] &&
+      actions["cameraHelperPath"]
+    ) {
       actions["cameraHelperPath"].play().paused = true
-    }
-
-    // Initialize the doors animation
-    if (actions['topDoor'] && actions['bottomDoor']) {
       actions["topDoor"].play().paused = true
       actions["bottomDoor"].play().paused = true
+      actions["spinsApps"].play().paused = true
     }
   }, [])
 
   useFrame((state, delta) => {
+    // Copy position and rotation of the camera helper to the camera
     if (cameraHelperRef.current) {
       state.camera.zoom = 2.2
       state.camera.position.copy(cameraHelperRef.current.position)
       state.camera.rotation.copy(cameraHelperRef.current.rotation)
       state.camera.rotation.y += Math.PI
     }
-
-    if (actions["cameraHelperPath"] && actions['topDoor'] && actions['bottomDoor']) {
-      // play the camera animation based on the offset of the scroll
+    
+    if (
+      actions['topDoor'] &&
+      actions["spinsApps"] &&
+      actions['bottomDoor'] &&
+      actions["cameraHelperPath"]
+    )
+      {
+      // play the animations based on the offset of the scroll
       actions["cameraHelperPath"].time = THREE.MathUtils.lerp(
         actions["cameraHelperPath"].time,
         actions["cameraHelperPath"].getClip().duration * scroll.offset,
@@ -51,13 +62,24 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
         actions["cameraHelperPath"].time /
         actions["topDoor"].getClip().duration *
         actions["topDoor"].getClip().duration
+
+      if (actions["cameraHelperPath"].time > 30) {
+        actions["spinsApps"].paused = false
+      }
+
+      if (actions["cameraHelperPath"].time > 35) {
+        actions["spinsApps"].paused = true
+      }
     }
 
-    if (whatWeDoObjectRef.current) {
+    // Rotate the objects
+    if (
+      whatWeDoObjectRef.current &&
+      worldObjectRef.current &&
+      caseObjectRef.current
+    ) {
       whatWeDoObjectRef.current.rotation.y += delta * 0.2
-    }
-
-    if (caseObjectRef.current) {
+      worldObjectRef.current.rotation.y += delta * 0.2
       caseObjectRef.current.rotation.y += delta * 0.2
     }
   })
@@ -147,6 +169,7 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
           scale={0.39}
         />
         <mesh
+          ref={worldObjectRef}
           name="Object_worldwide"
           castShadow
           receiveShadow
@@ -154,7 +177,7 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
           material={materials["Material.006"]}
           position={[2.24, 3.99, 4.28]}
           rotation={[0, 0.51, 0]}
-          scale={[0.34, 0.31, 0.12]}
+          scale={0.34}
         />
         <mesh
           name="Rack"
@@ -303,13 +326,14 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
           scale={[0.04, 1, 1]}
         />
         <mesh
+          ref={movingAppsRef}
           name="1000+_apps"
           castShadow
           receiveShadow
           geometry={nodes["1000+_apps"].geometry}
           material={nodes["1000+_apps"].material}
           position={[-0.09, -4.23, -0.05]}
-          scale={1.29}
+          scale={1}
         />
       </group>
     </group>
