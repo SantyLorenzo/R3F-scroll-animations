@@ -27,8 +27,10 @@
     ]
   },
   "dependencies": {
+    "@react-spring/three": "^9.6.1",
     "@react-three/drei": "^9.56.12",
     "@react-three/fiber": "^8.10.1",
+    "@use-gesture/react": "^10.2.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "three": "^0.149.0"

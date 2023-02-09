@@ -3,6 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
 import { GLTFAction, GLTFResult } from "./types";
+import { DraggableMesh } from "../../components/DraggableMesh";
 
 export function Building(props: JSX.IntrinsicElements["group"]) {
   const scroll = useScroll()
@@ -71,17 +72,6 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
         actions["spinsApps"].paused = true
       }
     }
-
-    // Rotate the objects
-    if (
-      whatWeDoObjectRef.current &&
-      worldObjectRef.current &&
-      caseObjectRef.current
-    ) {
-      whatWeDoObjectRef.current.rotation.y += delta * 0.2
-      worldObjectRef.current.rotation.y += delta * 0.2
-      caseObjectRef.current.rotation.y += delta * 0.2
-    }
   })
 
   return (
@@ -147,7 +137,17 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
           rotation={[0, -1.42, 0]}
           scale={[0.19, 0.19, 0.31]}
         />
-        <mesh
+        <DraggableMesh
+          ref={whatWeDoObjectRef}
+          geometry={nodes.Object_what_we_do.geometry}
+          material={nodes.Object_what_we_do.material}
+          name="Object_what_we_do"
+          castShadow
+          receiveShadow
+          position={[3.69, 3.86, 9.19]}
+          scale={0.39}
+        />
+        <DraggableMesh
           ref={caseObjectRef}
           name="Object_case"
           castShadow
@@ -155,20 +155,10 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
           geometry={nodes.Object_case.geometry}
           material={nodes.Object_case.material}
           position={[-4.28, -6.06, -4.46]}
-          rotation={[0, 0.51, 0]}
           scale={0.36}
         />
-        <mesh
-          ref={whatWeDoObjectRef}
-          name="Object_what_we_do"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_what_we_do.geometry}
-          material={nodes.Object_what_we_do.material}
-          position={[3.69, 3.86, 9.19]}
-          scale={0.39}
-        />
-        <mesh
+
+        <DraggableMesh
           ref={worldObjectRef}
           name="Object_worldwide"
           castShadow
@@ -176,9 +166,9 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
           geometry={nodes.Object_worldwide.geometry}
           material={materials["Material.006"]}
           position={[2.24, 3.99, 4.28]}
-          rotation={[0, 0.51, 0]}
           scale={0.34}
         />
+
         <mesh
           name="Rack"
           castShadow
