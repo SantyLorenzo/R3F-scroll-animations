@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
 import { GLTFAction, GLTFResult } from "./types";
 import { DraggableMesh } from "../../components/DraggableMesh";
+import { Doors } from "../Doors";
 
 export function Building(props: JSX.IntrinsicElements["group"]) {
   const scroll = useScroll()
@@ -15,6 +16,8 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
   const whatWeDoObjectRef = useRef<THREE.Mesh>(null)
   const { nodes, materials, animations } = useGLTF("/building.glb") as unknown as GLTFResult
   const { actions } = useAnimations<GLTFAction>(animations, group)
+
+  const [mainAnimationTime, setMainAnimationTime] = React.useState(0)
 
   useEffect(() => {
     // Initialize animations
@@ -34,7 +37,7 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
   useFrame((state, delta) => {
     // Copy position and rotation of the camera helper to the camera
     if (cameraHelperRef.current) {
-      state.camera.zoom = 2.2
+      state.camera.zoom = 2.1
       state.camera.position.copy(cameraHelperRef.current.position)
       state.camera.rotation.copy(cameraHelperRef.current.rotation)
       state.camera.rotation.y += Math.PI
@@ -53,6 +56,8 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
         actions["cameraHelperPath"].getClip().duration * scroll.offset,
         1
       )
+
+      setMainAnimationTime(actions["cameraHelperPath"].time)
 
       actions["bottomDoor"].time =
         actions["cameraHelperPath"].time /
@@ -77,6 +82,9 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
+
+        <Doors mainAnimationTime={mainAnimationTime} />
+
         <group
           name="Camera_curve"
           position={[-0.16, -1.25, 0.14]}
