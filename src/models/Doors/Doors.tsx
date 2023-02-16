@@ -4,7 +4,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 import { GLTFAction, GLTFResult } from "./types";
 import { useFrame } from "@react-three/fiber";
 
-type DoorsProps = THREE.Group & {
+type DoorsProps = JSX.IntrinsicElements['group'] & {
   mainAnimationTime: number;
 }
 
