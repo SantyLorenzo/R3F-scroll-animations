@@ -13,7 +13,7 @@ import { Building } from "./models";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <div>
-      <Canvas>
+      <Canvas camera={{ zoom: 1.8 }}>
         <Environment preset="city" />
         <Sky sunPosition={[0, 0, 0]} />
         <Stars
@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           saturation={0}
         />
 
-        <ScrollControls pages={10} damping={0.5}>
+        <ScrollControls pages={10} damping={0.2} maxSpeed={0.03}>
           <Building />
         </ScrollControls>
       </Canvas>

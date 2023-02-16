@@ -16,7 +16,6 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
   const whatWeDoObjectRef = useRef<THREE.Mesh>(null)
   const { nodes, materials, animations } = useGLTF("/building.glb") as unknown as GLTFResult
   const { actions } = useAnimations<GLTFAction>(animations, group)
-
   const [mainAnimationTime, setMainAnimationTime] = React.useState(0)
 
   useEffect(() => {
@@ -37,7 +36,6 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
   useFrame((state, delta) => {
     // Copy position and rotation of the camera helper to the camera
     if (cameraHelperRef.current) {
-      state.camera.zoom = 2.1
       state.camera.position.copy(cameraHelperRef.current.position)
       state.camera.rotation.copy(cameraHelperRef.current.rotation)
       state.camera.rotation.y += Math.PI
@@ -79,11 +77,10 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
     }
   })
 
+  // shift cmand 5
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-
-        <Doors mainAnimationTime={mainAnimationTime} />
 
         <group
           name="Camera_curve"
@@ -306,23 +303,26 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
           scale={0.19}
         />
         <mesh
+          visible={false}
           name="Cube002"
           castShadow
           receiveShadow
           geometry={nodes.Cube002.geometry}
           material={nodes.Cube002.material}
           position={[6.21, 4.97, 9.16]}
-          scale={[0.04, 1, 1]}
         />
         <mesh
+          visible={false}
           name="Cube003"
           castShadow
           receiveShadow
           geometry={nodes.Cube003.geometry}
           material={nodes.Cube003.material}
           position={[6.21, 2.99, 9.16]}
-          scale={[0.04, 1, 1]}
         />
+
+        <Doors mainAnimationTime={mainAnimationTime} />
+
         <mesh
           ref={movingAppsRef}
           name="1000+_apps"

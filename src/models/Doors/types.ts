@@ -1,6 +1,6 @@
 import { GLTF } from 'three-stdlib'
 
-export type ActionName = 'Dor_02_Low' | 'Dor_01_Low'
+export type ActionName = 'dor_low.001Action.001' | 'dor_lowAction.002'
 
 export type DoorsTypes = THREE.Group & {
     mainAnimationTime: number | undefined;
@@ -12,11 +12,11 @@ export interface GLTFAction extends THREE.AnimationClip {
 
 export type GLTFResult = GLTF & {
     nodes: {
-        Dor_02_Low: THREE.Mesh
-        Dor_01_Low: THREE.Mesh
+        dor_low: THREE.Mesh
+        dor_Low_2: THREE.Mesh
     }
     materials: {
-        ['Material.044']: THREE.MeshStandardMaterial
+        ['Material.008']: THREE.MeshStandardMaterial
     }
     animations: GLTFAction[];
 }

@@ -1,63 +1,52 @@
-import * as THREE from 'three'
-import { useEffect, useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
-import { DoorsTypes, GLTFAction, GLTFResult } from './types'
-import { useFrame } from '@react-three/fiber'
+import * as THREE from "three";
+import React, { useEffect, useRef } from "react";
+import { useGLTF, useAnimations } from "@react-three/drei";
+import { GLTFAction, GLTFResult } from "./types";
+import { useFrame } from "@react-three/fiber";
 
-export function Doors({ mainAnimationTime = 0, ...props }: DoorsTypes): JSX.Element {
-  const group = useRef<THREE.Group>(null)
-  const { nodes, materials, animations } = useGLTF('/doors.glb') as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFAction>(animations, group)
-  
-  const topDoorRef = useRef<THREE.Mesh>(null)
-  const bottomDoorRef = useRef<THREE.Mesh>(null)
+type DoorsProps = THREE.Group & {
+  mainAnimationTime: number;
+}
 
-  useEffect(() => {
-    if (actions["Dor_01_Low"] && actions["Dor_02_Low"]) {
-      // actions["Dor_01_Low"].play().paused = true
-      // actions["Dor_02_Low"].play().paused = true
-    }
-  }, [])
-  
+export function Doors({ mainAnimationTime, ...props }: DoorsProps) {
+  const group = useRef<THREE.Group>(null);
+  const door1Ref = useRef<THREE.Mesh>(null);
+  const door2Ref = useRef<THREE.Mesh>(null);
+  const { nodes, materials } = useGLTF("/doors.glb") as unknown as GLTFResult;
+
   useFrame(() => {
-    console.log(mainAnimationTime)
-
-    // if (actions['Dor_01_Low'] && actions['Dor_02_Low']) {
-    //   actions["Dor_02_Low"].time =
-    //     mainAnimationTime /
-    //     actions["Dor_02_Low"].getClip().duration *
-    //     actions["Dor_02_Low"].getClip().duration
-
-    //   actions["Dor_01_Low"].time =
-    //     mainAnimationTime /
-    //     actions["Dor_01_Low"].getClip().duration *
-    //     actions["Dor_01_Low"].getClip().duration
-    // } 
+    if(door1Ref.current && door2Ref.current && mainAnimationTime > 2) {
+      door1Ref.current.position.z = 9.37 + (mainAnimationTime - 2) * 0.4;
+      door2Ref.current.position.z = 8.97 - (mainAnimationTime - 2) * 0.4;
+    }
   })
-
 
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
         <mesh
-          ref={topDoorRef}
-          name="Dor_02_Low"
-          geometry={nodes.Dor_02_Low.geometry}
-          material={materials['Material.044']}
-          // position={[-107.18, -31.82, 120.79]}
-          position={[6.1, 4, 9.678]}
+          ref={door1Ref}
+          name="dor_low"
+          castShadow
+          receiveShadow
+          geometry={nodes.dor_low.geometry}
+          material={materials["Material.008"]}
+          position={[6.1, 3.95, 9.37]}
+          scale={1.04}
         />
         <mesh
-          ref={bottomDoorRef}
-          name="Dor_01_Low"
-          geometry={nodes.Dor_01_Low.geometry}
-          material={materials['Material.044']}
-          // position={[-107.18, -31.82, 121.01]}
-          position={[6.1, 4, 9.678]}
+          ref={door2Ref}
+          name="dor_Low_2"
+          castShadow
+          receiveShadow
+          geometry={nodes.dor_Low_2.geometry}
+          material={materials["Material.008"]}
+          position={[6.1, 3.95, 8.97]}
+          scale={1.04}
         />
       </group>
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/doors.glb')
+useGLTF.preload("/Door.glb");
