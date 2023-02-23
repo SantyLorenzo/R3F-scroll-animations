@@ -21,7 +21,7 @@ export const App = () => {
   useBus("WHAT_WE_DO_CLOSE", () => setWhatWeDoModalOpen(false));
 
   return (
-    <ReactLenis root>
+    <ReactLenis root options={{ duration: 1 }}>
       <RoomTour />
 
       <Header />

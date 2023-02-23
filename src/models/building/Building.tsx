@@ -60,6 +60,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
       actions["cameraHelperPath"]
     )
       {
+      // change this 
       setMainAnimationTime(actions["cameraHelperPath"].time)
 
       actions["bottomDoor"].time =
@@ -82,7 +83,6 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
     }
   })
 
-  // shift cmand 5
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
