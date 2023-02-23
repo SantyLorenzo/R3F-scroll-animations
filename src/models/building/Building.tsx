@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
-import React, { useEffect, useRef } from "react";
-import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
+import { useEffect, useRef, useState } from "react";
+import { useGLTF, useAnimations } from "@react-three/drei";
 import { GLTFAction, GLTFResult } from "./types";
 import { DraggableMesh } from "../../components/DraggableMesh";
 import { Doors } from "../Doors/Doors";
@@ -17,7 +17,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
   const whatWeDoObjectRef = useRef<THREE.Mesh>(null)
   const { nodes, materials, animations } = useGLTF(buildingModel) as unknown as GLTFResult
   const { actions } = useAnimations<GLTFAction>(animations, group)
-  const [mainAnimationTime, setMainAnimationTime] = React.useState(0)
+  const [mainAnimationTime, setMainAnimationTime] = useState(0)
 
   useLenis((scrollData: any) => {
     if (actions["cameraHelperPath"]) {

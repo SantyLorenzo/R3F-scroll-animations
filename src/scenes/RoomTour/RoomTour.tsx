@@ -1,5 +1,5 @@
-import { Environment, Sky, Stars } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
+import { Environment, Sky, Stars } from "@react-three/drei"
 import { Building } from "../../models/Building/Building"
 
 export const RoomTour = () => {
