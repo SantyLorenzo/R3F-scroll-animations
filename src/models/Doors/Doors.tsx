@@ -1,21 +1,22 @@
 import * as THREE from "three";
-import React, { useEffect, useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
-import { GLTFAction, GLTFResult } from "./types";
+import { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import { GLTFResult } from "./types";
+import DoorsModel from './doors.glb'
 
 type DoorsProps = JSX.IntrinsicElements['group'] & {
   mainAnimationTime: number;
 }
 
-export function Doors({ mainAnimationTime, ...props }: DoorsProps) {
+export const Doors = ({ mainAnimationTime, ...props }: DoorsProps) => {
   const group = useRef<THREE.Group>(null);
   const door1Ref = useRef<THREE.Mesh>(null);
   const door2Ref = useRef<THREE.Mesh>(null);
-  const { nodes, materials } = useGLTF("/doors.glb") as unknown as GLTFResult;
+  const { nodes, materials } = useGLTF(DoorsModel) as unknown as GLTFResult;
 
   useFrame(() => {
-    if(door1Ref.current && door2Ref.current && mainAnimationTime > 2) {
+    if (door1Ref.current && door2Ref.current && mainAnimationTime > 2) {
       door1Ref.current.position.z = 9.37 + (mainAnimationTime - 2) * 0.4;
       door2Ref.current.position.z = 8.97 - (mainAnimationTime - 2) * 0.4;
     }
@@ -49,4 +50,4 @@ export function Doors({ mainAnimationTime, ...props }: DoorsProps) {
   );
 }
 
-useGLTF.preload("/Door.glb");
+useGLTF.preload(DoorsModel);

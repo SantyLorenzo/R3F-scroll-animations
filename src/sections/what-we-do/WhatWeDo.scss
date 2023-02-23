@@ -1,0 +1,137 @@
+@import "/src/styles/variables/colors";
+@import "/src/styles/mixins/font-mixin";
+@import "/src/styles/mixins/base";
+
+.what-we-do__wrapper {
+  margin-top: 212px;
+  margin-bottom: 85px;
+  padding-bottom: 188px;
+}
+
+.what-we-do__title {
+  display: flex;
+  margin-bottom: 60px;
+  position: relative;
+
+  >div {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 38px;
+    padding-top: 59px;
+  }
+
+  span {
+    @include gotham-bold(14, 16);
+    letter-spacing: 0.2em;
+    color: $white-60;
+  }
+}
+
+.what-we-do__description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 640px;
+  width: 100%;
+  min-height: 32px;
+
+  p {
+    @include gotham-bold(14, 16);
+    letter-spacing: 0.2em;
+    color: $white-100;
+    text-transform: uppercase;
+  }
+
+  span {
+    position: relative;
+    color: $dark;
+    z-index: 2;
+    padding: 0 9px;
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      background-color: $white-100;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.what-we-do__areas {
+  max-width: 888px;
+  width: 100%;
+  min-height: 865px;
+  margin: 0 auto;
+  padding: 139px 0 222px;
+  display: flex;
+}
+
+.what-we-do__areas-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  &:not(:last-child) {
+    margin-right: 39px;
+  }
+}
+
+.what-we-do__areas-item {
+  width: 270px;
+  min-height: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  >div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border: 1px dotted $white-50;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  p {
+    @include akrobat-black(20, 24);
+    color: $white-100;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 35px;
+  }
+
+  button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.what-we-do__areas-list {
+
+  &--left,
+  &--right {
+    .what-we-do__areas-item {
+      margin-top: 132px;
+    }
+  }
+
+  &--center {
+    .what-we-do__areas-item {
+      &:first-child {
+        margin-bottom: 132px;
+      }
+    }
+  }
+}

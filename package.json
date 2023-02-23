@@ -1,13 +1,15 @@
 {
-  "name": "mercdev.com",
+  "name": "vite-cra",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "homepage": "https://Konstantin9658.github.io/mercdev",
   "type": "module",
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "vite --open",
-    "lint": "tsc",
-    "build:production": "vite build --mode production",
-    "build": "vite build --mode dev",
+    "build": "tsc && vite build",
+    "lint": "npx eslint src/*",
     "prepare": "husky install",
     "test": ""
   },
@@ -27,13 +29,25 @@
     ]
   },
   "dependencies": {
+    "@14islands/r3f-scroll-rig": "^8.9.1",
     "@react-spring/three": "^9.6.1",
-    "@react-three/drei": "^9.56.12",
-    "@react-three/fiber": "^8.10.1",
+    "@react-three/drei": "^9.56.25",
+    "@react-three/fiber": "^8.11.2",
+    "@studio-freight/lenis": "^0.2.28",
+    "@studio-freight/react-lenis": "^0.0.11",
+    "@types/react-modal": "^3.13.1",
+    "@types/three": "^0.149.0",
     "@use-gesture/react": "^10.2.24",
+    "axios": "^1.2.3",
+    "clsx": "^1.2.1",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.149.0"
+    "react-hook-form": "^7.42.1",
+    "react-indiana-drag-scroll": "^2.2.0",
+    "react-modal": "^3.16.1",
+    "three": "^0.149.0",
+    "use-bus": "^2.5.2"
   },
   "devDependencies": {
     "@andylacko/vite-svg-react-loader": "^2.0.5",
@@ -43,7 +57,6 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/svgo": "^2.6.4",
-    "@types/three": "^0.149.0",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "@vitejs/plugin-react-swc": "^3.0.1",

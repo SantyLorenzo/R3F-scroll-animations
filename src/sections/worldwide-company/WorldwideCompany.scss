@@ -1,0 +1,105 @@
+@import "/src/styles/variables/colors";
+@import "/src/styles/mixins/font-mixin";
+@import "/src/styles/mixins/base";
+
+.worldwide-company__wrapper {
+  margin-top: 190px;
+  padding-bottom: 124px;
+}
+
+.worldwide-company__title {
+  display: flex;
+  position: relative;
+
+  >div {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 53px;
+    padding-top: 59px;
+  }
+
+  span {
+    @include gotham-bold(14, 16);
+    letter-spacing: 0.2em;
+    color: $white-60;
+  }
+}
+
+.worldwide-company__description {
+  display: flex;
+  align-items: center;
+  margin-top: -32px;
+
+  p {
+    @include gotham-regular(24, 40);
+    color: $white-100;
+    width: 464px;
+    padding-top: 15px;
+  }
+}
+
+.worldwide-company__country-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1275px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 249px 0;
+}
+
+.worldwide-company__country-item {
+  width: 132px;
+  min-height: 52px;
+  padding-left: 54px;
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+  }
+
+  &::after {
+    width: 4px;
+    height: 4px;
+    background-color: $white-100;
+    left: 17px;
+    top: 16px;
+  }
+
+  &::before {
+    width: 35px;
+    height: 35px;
+    border: 1px dashed $white-20;
+    left: 0;
+    top: 0;
+  }
+
+  &:nth-child(n + 5) {
+    margin-top: 98px;
+  }
+
+  &:not(:nth-child(4n)) {
+    margin-right: 212px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+  }
+
+  svg {
+    margin-bottom: 12px;
+  }
+
+  p {
+    @include gotham-bold(16, 20);
+    letter-spacing: 0.2em;
+    color: $white-100;
+    text-transform: uppercase;
+  }
+}

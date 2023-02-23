@@ -1,0 +1,62 @@
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin background-img($path) {
+  $png: "#{$path}.png";
+  $png2x: "#{$path}@2x.png";
+  $webp: "#{$path}.webp";
+  $webp2x: "#{$path}@2x.webp";
+
+  background-image: url($png);
+  @include retina() {
+    background-image: url($png2x);
+  }
+
+  /* Chrome 66+, Edge 79+, Opera 53+, Android Brower 80+ */
+  @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+    @supports (background-image: -webkit-image-set(url($webp) 1x)) {
+      background-image: -webkit-image-set(url($webp) 1x, url($webp2x) 2x);
+    }
+  }
+
+  /* FF 66+ */
+  @supports (flex-basis: max-content) and (-moz-appearance: meterbar) {
+    background-image: url($webp);
+
+    @include retina() {
+      background-image: url($webp2x);
+    }
+  }
+}
+
+@mixin only-desktop() {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media only screen and (max-width: 625px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-small() {
+  @media only screen and (max-width: 1250px) {
+    @content;
+  }
+}

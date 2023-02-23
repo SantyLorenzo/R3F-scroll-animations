@@ -1,0 +1,67 @@
+@import "./fonts";
+@import "./common/container";
+@import "./mixins/font-mixin";
+@import "./variables/colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-align: left;
+  text-size-adjust: none;
+
+  &:any-link {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  font-size: 10px;
+  scroll-behavior: initial;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  appearance: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}

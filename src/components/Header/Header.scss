@@ -1,0 +1,60 @@
+@import "/src/styles/variables/colors";
+@import "/src/styles/mixins/font-mixin";
+
+.header {
+  margin-top: 26px;
+  min-height: 156px;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header__logo {
+  width: 212px;
+  min-height: 38px;
+  margin-right: 80px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include gotham-regular(16, 18);
+    color: $white-100;
+    background-color: transparent;
+    width: 197px;
+    min-height: 52px;
+    border: 1px solid $white-30;
+    border-radius: 39px;
+    margin-left: auto;
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      background-color: $white-100;
+      color: $black-100;
+    }
+  }
+}
+
+.header__nav-list {
+  display: flex;
+  list-style: none;
+
+  li {
+    color: $white-100;
+    @include gotham-regular(16, 18);
+    
+    &:not(:last-child) {
+      margin-right: 52px;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@import "/src/styles/variables/colors";
+@import "/src/styles/mixins/font-mixin";
+@import "/src/styles/mixins/base";
+
+.verticals__wrapper {
+  padding: 135px 0;
+}
+
+.verticals__description,
+.verticals__counter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.verticals__description {
+  margin-top: 61px;
+
+  p {
+    @include gotham-regular(24, 40);
+    color: $white-100;
+    width: 762px;
+  }
+}
+
+.verticals__counter {
+  width: 458px;
+  padding-top: 8px;
+
+  span {
+    @include gotham-bold(14, 16);
+    letter-spacing: 0.2em;
+    color: $white-60;
+  }
+}
+
+.verticals__project-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0 116px;
+  margin-top: 149px;
+  margin-bottom: 202px;
+
+  @media (min-width: 1864px) {
+    width: 1864px;
+    margin: 149px auto 202px;
+  }
+}
+
+.verticals__project-item {
+  min-height: 601px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:not(:first-child) {
+    padding-left: 32px;
+  }
+
+  &:not(:last-child) {
+    padding-right: 32px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background-color: $white-14;
+    }
+  }
+
+  div {
+    width: 360px;
+    min-height: 444px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  h3 {
+    @include akrobat-extrabold(45, 54);
+    color: $red-100;
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 4px;
+    padding-bottom: 12px;
+    text-shadow: 0px 1px 25px $red-43;
+  }
+
+  p {
+    @include gotham-regular(14, 36);
+    text-shadow: 0px 0px 12px $black-60;
+    color: $black-90;
+  }
+}

@@ -4,22 +4,34 @@ import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
 import { GLTFAction, GLTFResult } from "./types";
 import { DraggableMesh } from "../../components/DraggableMesh";
-import { Doors } from "../Doors";
+import { Doors } from "../Doors/Doors";
+import buildingModel from "./building.glb";
+import { useLenis } from "@studio-freight/react-lenis";
 
-export function Building(props: JSX.IntrinsicElements["group"]) {
-  const scroll = useScroll()
+export const Building = (props: JSX.IntrinsicElements["group"]) => {
   const group = useRef<THREE.Group>(null)
   const movingAppsRef = useRef<THREE.Mesh>(null)
   const caseObjectRef = useRef<THREE.Mesh>(null)
   const worldObjectRef = useRef<THREE.Mesh>(null)
   const cameraHelperRef = useRef<THREE.Mesh>(null)
   const whatWeDoObjectRef = useRef<THREE.Mesh>(null)
-  const { nodes, materials, animations } = useGLTF("/building.glb") as unknown as GLTFResult
+  const { nodes, materials, animations } = useGLTF(buildingModel) as unknown as GLTFResult
   const { actions } = useAnimations<GLTFAction>(animations, group)
   const [mainAnimationTime, setMainAnimationTime] = React.useState(0)
 
+  useLenis((scrollData: any) => {
+    if (actions["cameraHelperPath"]) {
+      // play the animations based on the offset of the scroll
+      actions["cameraHelperPath"].time = THREE.MathUtils.lerp(
+        actions["cameraHelperPath"].time,
+        actions["cameraHelperPath"].getClip().duration * scrollData.progress,
+        1
+      )
+    }
+  })
+
   useEffect(() => {
-    // Initialize animations
+    // initialize animations
     if (
       actions['topDoor'] &&
       actions["spinsApps"] &&
@@ -33,8 +45,8 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
     }
   }, [])
 
-  useFrame((state, delta) => {
-    // Copy position and rotation of the camera helper to the camera
+  useFrame((state) => {
+    // copy position and rotation of the camera helper to the camera
     if (cameraHelperRef.current) {
       state.camera.position.copy(cameraHelperRef.current.position)
       state.camera.rotation.copy(cameraHelperRef.current.rotation)
@@ -48,13 +60,6 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
       actions["cameraHelperPath"]
     )
       {
-      // play the animations based on the offset of the scroll
-      actions["cameraHelperPath"].time = THREE.MathUtils.lerp(
-        actions["cameraHelperPath"].time,
-        actions["cameraHelperPath"].getClip().duration * scroll.offset,
-        1
-      )
-
       setMainAnimationTime(actions["cameraHelperPath"].time)
 
       actions["bottomDoor"].time =
@@ -338,4 +343,4 @@ export function Building(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/building.glb");
+useGLTF.preload(buildingModel);
