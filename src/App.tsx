@@ -1,6 +1,9 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import useBus from "use-bus";
-import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import { Canvas } from "@react-three/fiber"
+import { ReactLenis } from "@studio-freight/react-lenis";
+import { Environment, Sky, Stars } from "@react-three/drei"
+import { Building } from "./models/Building/Building"
 
 import { About } from "./sections/about/About";
 import { Cases } from "./sections/cases/Cases";
@@ -12,7 +15,7 @@ import { Verticals } from "./sections/verticals/Verticals";
 import { OurClients } from "./sections/our-clients/ourClients";
 import { ModalWhatWeDo } from "./components/Modal/ModalWhatWeDo";
 import { WorldwideCompany } from "./sections/worldwide-company/WorldwideCompany";
-import { RoomTour } from "./scenes/RoomTour/RoomTour";
+
 
 export const App = () => {
   const [isWhatWeDoModalOpen, setWhatWeDoModalOpen] = useState(false);
@@ -22,7 +25,26 @@ export const App = () => {
 
   return (
     <ReactLenis root options={{ duration: 1 }}>
-      <RoomTour />
+      <Canvas
+        camera={{ zoom: 1.8 }}
+        style={{
+            top: 0,
+            zIndex: -1,
+            position: 'fixed',
+        }}
+      >
+        <Environment preset="city" />
+        <Sky sunPosition={[0, 0, 0]} />
+        <Stars
+            depth={0}
+            factor={4}
+            speed={0.1}
+            count={5000}
+            radius={100}
+            saturation={0}
+        />
+        <Building />
+      </Canvas>
 
       <Header />
       <main>
