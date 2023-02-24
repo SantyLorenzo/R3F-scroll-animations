@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import useBus from "use-bus";
 import { Canvas } from "@react-three/fiber"
 import { ReactLenis } from "@studio-freight/react-lenis";
-import { Environment, Sky, Stars } from "@react-three/drei"
+import { Environment, Sky, Stars, Loader } from "@react-three/drei"
 import { Building } from "./models"
 
 import { About } from "./sections/about/About";
@@ -33,18 +33,23 @@ export const App = () => {
             position: 'fixed',
         }}
       >
-        <Environment preset="city" />
-        <Sky sunPosition={[0, 0, 0]} />
-        <Stars
-            depth={0}
-            factor={4}
-            speed={0.1}
-            count={5000}
-            radius={100}
-            saturation={0}
-        />
-        <Building />
+        <Suspense fallback={null}>
+          <Environment preset="city" />
+          <Sky sunPosition={[0, 0, 0]} />
+          <Stars
+              depth={0}
+              factor={4}
+              speed={0.1}
+              count={5000}
+              radius={100}
+              saturation={0}
+          />
+          <Building />
+        </Suspense>
       </Canvas>
+
+      <Loader />
+
 
       <Header />
       <main>
