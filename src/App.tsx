@@ -48,8 +48,16 @@ export const App = () => {
         </Suspense>
       </Canvas>
 
-      <Loader />
-
+      <Loader
+        barStyles={{
+          width: '200px'
+        }}
+        dataStyles={{
+          width: '200px',
+          fontSize: '16px',
+          textAlign: 'center',
+        }}
+      />
 
       <Header />
       <main>
