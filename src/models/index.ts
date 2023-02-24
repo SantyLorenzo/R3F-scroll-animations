@@ -1,1 +1,1 @@
-export { Building }  from "./building";
+export { Building }  from "./building/Building";
