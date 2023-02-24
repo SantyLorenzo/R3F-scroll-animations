@@ -3,7 +3,7 @@ import useBus from "use-bus";
 import { Canvas } from "@react-three/fiber"
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { Environment, Sky, Stars } from "@react-three/drei"
-import { Building } from "./models/Building/Building"
+import { Building } from "./models"
 
 import { About } from "./sections/about/About";
 import { Cases } from "./sections/cases/Cases";
