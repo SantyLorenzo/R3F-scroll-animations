@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { forwardRef, InputHTMLAttributes, useId, useState } from "react";
-import useBus from "use-bus";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   activePlaceholder: string;
@@ -12,8 +11,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const [isActive, setActive] = useState(false);
     const [value, setValue] = useState<string | null>(null);
     const id = useId();
-
-    useBus("RESET_FIELD", () => setValue(null));
 
     return (
       <>

@@ -54,5 +54,6 @@ module.exports = {
         aspects: ["invalidHref", "preferButton"],
       },
     ],
+    "react/no-unknown-property": "off",
   },
 };

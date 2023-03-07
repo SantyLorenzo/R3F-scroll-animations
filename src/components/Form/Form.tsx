@@ -4,7 +4,6 @@ import axios from "axios";
 import clsx from "clsx";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { dispatch } from "use-bus";
 
 import { Checkbox } from "./Checkbox";
 import { Input } from "./Input";
@@ -30,7 +29,6 @@ export const Form = ({ classModificator }: { classModificator?: string }) => {
 
   const resetForm = () => {
     reset();
-    dispatch("RESET_FIELD");
   };
 
   const onSubmit = async (data: FormValues) => {

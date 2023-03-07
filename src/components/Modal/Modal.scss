@@ -5,114 +5,114 @@
 .modal {
   outline: none;
   border: none;
-}
+  z-index: 101;
 
-.modal-open {
-  overflow: hidden;
-}
+  &-overlay {
+    background-color: $white-10;
+    inset: 0;
+    position: fixed;
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
 
-.modal-overlay {
-  background-color: $white-10;
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  justify-content: flex-end;
-  overflow: auto;
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  outline: none;
-  border: none;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
-  padding: 17px 19px;
-
-  &.ReactModal__Overlay--after-open {
-    opacity: 1;
+    &.visible {
+      opacity: 1;
+    }
   }
 }
 
 .modal-what-we-do {
-  width: 100%;
-  max-width: 653px;
-  height: 831px;
+  width: 653px;
+  right: 18px;
+  top: 18px;
+  bottom: 18px;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   background-color: $dark;
   padding: 35px 38px 0;
-  position: relative;
-}
+  position: fixed;
+  transition: all 0.3s ease;
+  transform: translateX(calc(100% + 18px));
 
-.modal-what-we-do__close {
-  position: absolute;
-  width: 74px;
-  height: 74px;
-  border-radius: 50%;
-  background-color: $dark;
-  top: 0;
-  left: -95px;
-  transition: all 0.3s ease-in-out;
+  &.visible {
+    transform: translateX(0);
 
-  &:hover,
-  &:focus-visible {
-    opacity: 0.7;
-  }
-}
+    .modal-what-we-do__close {
+      opacity: 1;
 
-.modal-what-we-do__img {
-  width: 100%;
-  min-height: 225px;
-  background-color: $white-30;
-  border-radius: 20px;
-  margin-bottom: 50px;
-}
-
-.modal-what-we-do__inner {
-  max-width: 505px;
-  width: 100%;
-  padding-left: 33px;
-  padding-right: 20px;
-
-  h2 {
-    @include akrobat-extrabold(62, 60);
-    color: $red-100;
-    padding-bottom: 28px;
-    text-transform: uppercase;
+      &:hover,
+      &:focus-visible {
+        opacity: 0.7;
+      }
+    }
   }
 
-  svg {
-    display: inline-block;
-    vertical-align: top;
+  &__close {
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background-color: $dark;
+    top: 0;
+    left: -95px;
+    transition: all 0.3s ease;
+    opacity: 0;
   }
 
-  p {
-    @include gotham-regular(18, 32);
-    color: $white-80;
-    padding-bottom: 18px;
+  &__img {
+    width: 100%;
+    min-height: 225px;
+    background-color: $white-30;
+    border-radius: 20px;
+    margin-bottom: 50px;
   }
 
-  a {
-    width: 147px;
-    min-height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 28px;
-    margin-top: 18px;
-    background-color: $white-100;
-    border: 1px solid $white-100;
-    border-radius: 39px;
-    @include gotham-regular(16, 18);
-    color: $black-100;
-    transition: all 0.3s ease-in-out;
+  &__inner {
+    max-width: 505px;
+    width: 100%;
+    padding-left: 33px;
+    padding-right: 20px;
 
-    &:hover,
-    &:focus-visible {
-      color: $white-100;
-      background-color: transparent;
+    h2 {
+      @include akrobat-extrabold(62, 60);
+      color: $red-100;
+      padding-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    svg {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    p {
+      @include gotham-regular(18, 32);
+      color: $white-80;
+      padding-bottom: 18px;
+    }
+
+    a {
+      width: 147px;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      margin-top: 18px;
+      background-color: $white-100;
+      border: 1px solid $white-100;
+      border-radius: 39px;
+      @include gotham-regular(16, 18);
+      color: $black-100;
+      transition: all 0.3s ease-in-out;
+
+      &:hover,
+      &:focus-visible {
+        color: $white-100;
+        background-color: transparent;
+      }
     }
   }
 }

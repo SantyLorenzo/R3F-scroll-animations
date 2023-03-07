@@ -1,7 +1,5 @@
 import "./WhatWeDo.scss";
 
-import { dispatch } from "use-bus";
-
 import { ReactComponent as Design } from "../../assets/images/icon/what-we-do/design.svg";
 import { ReactComponent as DigitalTransformation } from "../../assets/images/icon/what-we-do/digital-transformation.svg";
 import { ReactComponent as DiscoveryPhase } from "../../assets/images/icon/what-we-do/discovery-phase.svg";
@@ -9,6 +7,7 @@ import { ReactComponent as QATesting } from "../../assets/images/icon/what-we-do
 import { ReactComponent as StaffAugmentation } from "../../assets/images/icon/what-we-do/staff-augmentation.svg";
 import { ReactComponent as WearableDevices } from "../../assets/images/icon/what-we-do/wearable-devices.svg";
 import { ReactComponent as WhatWeDoSvg } from "../../assets/images/text/what-we-do.svg";
+import { useModalStore } from "../../store/modal";
 
 // const areasList = [
 //   {
@@ -38,6 +37,8 @@ import { ReactComponent as WhatWeDoSvg } from "../../assets/images/text/what-we-
 // ];
 
 export const WhatWeDo = () => {
+  const setWhatWeDoVisible = useModalStore((state) => state.setWhatWeDoVisible);
+
   return (
     <section className="what-we-do container">
       <h2 className="visually-hidden">What we do</h2>
@@ -59,14 +60,14 @@ export const WhatWeDo = () => {
       <div className="what-we-do__areas">
         <ul className="what-we-do__areas-list what-we-do__areas-list--left">
           <li className="what-we-do__areas-item">
-            <button onClick={() => dispatch("WHAT_WE_DO_OPEN")}></button>
+            <button onClick={() => setWhatWeDoVisible(true)}></button>
             <div>
               <DigitalTransformation />
             </div>
             <p>Digital Transformation</p>
           </li>
           <li className="what-we-do__areas-item">
-            <button onClick={() => dispatch("WHAT_WE_DO_OPEN")}></button>
+            <button onClick={() => setWhatWeDoVisible(true)}></button>
             <div>
               <WearableDevices />
             </div>
@@ -75,14 +76,14 @@ export const WhatWeDo = () => {
         </ul>
         <ul className="what-we-do__areas-list what-we-do__areas-list--center">
           <li className="what-we-do__areas-item">
-            <button onClick={() => dispatch("WHAT_WE_DO_OPEN")}></button>
+            <button onClick={() => setWhatWeDoVisible(true)}></button>
             <div>
               <DiscoveryPhase />
             </div>
             <p>Discovery phase</p>
           </li>
           <li className="what-we-do__areas-item">
-            <button onClick={() => dispatch("WHAT_WE_DO_OPEN")}></button>
+            <button onClick={() => setWhatWeDoVisible(true)}></button>
             <div>
               <StaffAugmentation />
             </div>
@@ -91,14 +92,14 @@ export const WhatWeDo = () => {
         </ul>
         <ul className="what-we-do__areas-list what-we-do__areas-list--right">
           <li className="what-we-do__areas-item">
-            <button onClick={() => dispatch("WHAT_WE_DO_OPEN")}></button>
+            <button onClick={() => setWhatWeDoVisible(true)}></button>
             <div>
               <Design />
             </div>
             <p>Design</p>
           </li>
           <li className="what-we-do__areas-item">
-            <button onClick={() => dispatch("WHAT_WE_DO_OPEN")}></button>
+            <button onClick={() => setWhatWeDoVisible(true)}></button>
             <div>
               <QATesting />
             </div>

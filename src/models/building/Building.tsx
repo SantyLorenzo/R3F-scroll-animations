@@ -1,23 +1,40 @@
-import * as THREE from "three";
+import { useAnimations, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
-import { GLTFAction, GLTFResult } from "./types";
-import { DraggableMesh } from "../../components/DraggableMesh";
-import { Doors } from "../Doors/Doors";
-import buildingModel from "./building.glb";
 import { useLenis } from "@studio-freight/react-lenis";
+import { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
+
+import { DraggableMesh } from "../../components/DraggableMesh";
+import { Box } from "../Box/Box";
+import { CeilingMain } from "../CeilingMain/CeilingMain";
+import { Handrails } from "../Handrails/Handrails";
+import { Hatch } from "../Hatch/Hatch";
+import { Doors } from "../index";
+import { MiniTerminal } from "../MiniTerminal/MiniTerminal";
+import { Panel } from "../Panel/Panel";
+import { Partition } from "../Partition/Partition";
+import { Pillars } from "../Pillars/Pillars";
+import { ReceptionFloor } from "../ReceptionFloor/ReceptionFloor";
+import { Stand } from "../Stand/Stand";
+import { WallWithPanels } from "../WallWithPanels/WallWithPanels";
+import { Window } from "../Window/Window";
+import { Windowsill } from "../WindowIll/WindowIll";
+import { Wires } from "../Wires/Wires";
+import buildingModel from "./building.glb";
+import { GLTFAction, GLTFResult } from "./types";
 
 export const Building = (props: JSX.IntrinsicElements["group"]) => {
-  const group = useRef<THREE.Group>(null)
-  const movingAppsRef = useRef<THREE.Mesh>(null)
-  const caseObjectRef = useRef<THREE.Mesh>(null)
-  const worldObjectRef = useRef<THREE.Mesh>(null)
-  const cameraHelperRef = useRef<THREE.Mesh>(null)
-  const whatWeDoObjectRef = useRef<THREE.Mesh>(null)
-  const { nodes, materials, animations } = useGLTF(buildingModel) as unknown as GLTFResult
-  const { actions } = useAnimations<GLTFAction>(animations, group)
-  const [mainAnimationTime, setMainAnimationTime] = useState(0)
+  const group = useRef<THREE.Group>(null);
+  const movingAppsRef = useRef<THREE.Mesh>(null);
+  const caseObjectRef = useRef<THREE.Mesh>(null);
+  const worldObjectRef = useRef<THREE.Mesh>(null);
+  const cameraHelperRef = useRef<THREE.Mesh>(null);
+  const whatWeDoObjectRef = useRef<THREE.Mesh>(null);
+  const { nodes, materials, animations } = useGLTF(
+    buildingModel
+  ) as unknown as GLTFResult;
+  const { actions } = useAnimations<GLTFAction>(animations, group);
+  const [mainAnimationTime, setMainAnimationTime] = useState(0);
 
   useLenis((scrollData: any) => {
     if (actions["cameraHelperPath"]) {
@@ -26,67 +43,67 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
         actions["cameraHelperPath"].time,
         actions["cameraHelperPath"].getClip().duration * scrollData.progress,
         1
-      )
+      );
     }
-  })
+  });
 
   useEffect(() => {
     // initialize animations
     if (
-      actions['topDoor'] &&
+      actions["topDoor"] &&
       actions["spinsApps"] &&
-      actions['bottomDoor'] &&
+      actions["bottomDoor"] &&
       actions["cameraHelperPath"]
     ) {
-      actions["cameraHelperPath"].play().paused = true
-      actions["topDoor"].play().paused = true
-      actions["bottomDoor"].play().paused = true
-      actions["spinsApps"].play().paused = true
+      actions["cameraHelperPath"].play().paused = true;
+      actions["topDoor"].play().paused = true;
+      actions["bottomDoor"].play().paused = true;
+      actions["spinsApps"].play().paused = true;
     }
-  }, [])
+  }, []);
 
   useFrame((state) => {
     // copy position and rotation of the camera helper to the camera
     if (cameraHelperRef.current) {
-      state.camera.position.copy(cameraHelperRef.current.position)
-      state.camera.rotation.copy(cameraHelperRef.current.rotation)
-      state.camera.rotation.y += Math.PI
+      state.camera.position.copy(cameraHelperRef.current.position);
+      state.camera.rotation.copy(cameraHelperRef.current.rotation);
+      state.camera.rotation.y += Math.PI;
     }
-    
+
     if (
-      actions['topDoor'] &&
+      actions["topDoor"] &&
       actions["spinsApps"] &&
-      actions['bottomDoor'] &&
+      actions["bottomDoor"] &&
       actions["cameraHelperPath"]
-    )
-      {
-      // change this 
-      setMainAnimationTime(actions["cameraHelperPath"].time)
+    ) {
+      // change this
+      setMainAnimationTime(actions["cameraHelperPath"].time);
 
       actions["bottomDoor"].time =
-        actions["cameraHelperPath"].time /
-        actions["bottomDoor"].getClip().duration *
-        actions["bottomDoor"].getClip().duration
+        (actions["cameraHelperPath"].time /
+          actions["bottomDoor"].getClip().duration) *
+        actions["bottomDoor"].getClip().duration;
 
       actions["topDoor"].time =
-        actions["cameraHelperPath"].time /
-        actions["topDoor"].getClip().duration *
-        actions["topDoor"].getClip().duration
+        (actions["cameraHelperPath"].time /
+          actions["topDoor"].getClip().duration) *
+        actions["topDoor"].getClip().duration;
 
       if (actions["cameraHelperPath"].time > 30) {
-        actions["spinsApps"].paused = false
+        actions["spinsApps"].paused = false;
       }
 
       if (actions["cameraHelperPath"].time > 35) {
-        actions["spinsApps"].paused = true
+        actions["spinsApps"].paused = true;
       }
+
+      setMainAnimationTime(actions["cameraHelperPath"].time);
     }
-  })
+  });
 
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-
         <group
           name="Camera_curve"
           position={[-0.16, -1.25, 0.14]}
@@ -109,6 +126,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           scale={0.09}
         />
         <mesh
+          visible={false}
           name="First_room"
           castShadow
           receiveShadow
@@ -147,8 +165,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           rotation={[0, -1.42, 0]}
           scale={[0.19, 0.19, 0.31]}
         />
-        <DraggableMesh
-          ref={whatWeDoObjectRef}
+        <mesh
           geometry={nodes.Object_what_we_do.geometry}
           material={nodes.Object_what_we_do.material}
           name="Object_what_we_do"
@@ -157,8 +174,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           position={[3.69, 3.86, 9.19]}
           scale={0.39}
         />
-        <DraggableMesh
-          ref={caseObjectRef}
+        <mesh
           name="Object_case"
           castShadow
           receiveShadow
@@ -168,8 +184,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           scale={0.36}
         />
 
-        <DraggableMesh
-          ref={worldObjectRef}
+        <mesh
           name="Object_worldwide"
           castShadow
           receiveShadow
@@ -315,6 +330,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           geometry={nodes.Cube002.geometry}
           material={nodes.Cube002.material}
           position={[6.21, 4.97, 9.16]}
+          scale={[0.04, 1, 1]}
         />
         <mesh
           visible={false}
@@ -324,10 +340,8 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           geometry={nodes.Cube003.geometry}
           material={nodes.Cube003.material}
           position={[6.21, 2.99, 9.16]}
+          scale={[0.04, 1, 1]}
         />
-
-        <Doors mainAnimationTime={mainAnimationTime} />
-
         <mesh
           ref={movingAppsRef}
           name="1000+_apps"
@@ -338,9 +352,24 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           position={[-0.09, -4.23, -0.05]}
           scale={1}
         />
+        <Doors mainAnimationTime={mainAnimationTime} />
+        <CeilingMain />
+        <Partition />
+        <Panel />
+        <Handrails />
+        <Window />
+        <Box />
+        <Wires />
+        <Windowsill />
+        <MiniTerminal />
+        <ReceptionFloor />
+        {/* <Pillars /> */}
+        <Stand />
+        <Hatch />
+        <WallWithPanels />
       </group>
     </group>
   );
-}
+};
 
 useGLTF.preload(buildingModel);

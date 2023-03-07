@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600px" height="1600px" viewBox="0 0 1600 1600" style="background: rgba(29,31,38,0.00);">
+    <style>
+        @keyframes BG-Group_t { 0% { transform: translate(800px,800px) scale(1,1) translate(-1679.5px,-1059.63px); } 100% { transform: translate(800px,800px) scale(0.9,0.9) translate(-1679.5px,-1059.63px); } }
+        @keyframes BG-Group_o { 0% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes Big-Oval_o { 0% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes Big-Oval_do { 0% { stroke-dashoffset: 1042.74px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes Basic-line_o { 0% { opacity: 0.1; } 100% { opacity: 0; } }
+        @keyframes Basic-line_da { 0% { stroke-dasharray: 1678.96px 1678.96px; animation-timing-function: cubic-bezier(0.42,0,1,1); } 86.3158% { stroke-dasharray: 1678.96px 0px; animation-timing-function: cubic-bezier(0,0,0.58,1); } 100% { stroke-dasharray: 0px 1678.96px; } }
+        @keyframes Super-Comet_t { 0% { transform: translate(-8px,0px); animation-timing-function: cubic-bezier(0.42,0,1,1); } 100% { transform: translate(1657.5px,0px); } }
+        @keyframes glow-0_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-1_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-2_o { 0% { opacity: 0; } 50% { opacity: 0.07; } 100% { opacity: 0; } }
+        @keyframes glow-3_o { 0% { opacity: 0; } 50% { opacity: 0.08; } 100% { opacity: 0; } }
+        @keyframes glow-4_o { 0% { opacity: 0; } 50% { opacity: 0.15; } 100% { opacity: 0; } }
+        @keyframes glow-5_o { 0% { opacity: 0; } 39.2857% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes comet_t { 0% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 96.4285% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 97.619% { transform: translate(22.9978px,22.0044px) scale(0.2,10) translate(-18px,-1px); } 100% { transform: translate(22.9978px,22.0044px) scale(0.2,1) translate(-18px,-1px); } }
+        @keyframes comet_o { 0% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes Small-Oval_o { 0% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes Small-Oval_do { 0% { stroke-dashoffset: 627.98px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes Basic-line-2_o { 0% { opacity: 0.1; } 100% { opacity: 0; } }
+        @keyframes Basic-line-2_da { 0% { stroke-dasharray: 1678.96px 1678.96px; animation-timing-function: cubic-bezier(0.42,0,1,1); } 88.1818% { stroke-dasharray: 1678.96px 0px; animation-timing-function: cubic-bezier(0,0,0.58,1); } 100% { stroke-dasharray: 0px 1678.96px; } }
+        @keyframes Super-Comet-2_t { 0% { transform: translate(-8px,0px); animation-timing-function: cubic-bezier(0.42,0,1,1); } 100% { transform: translate(1657.5px,0px); } }
+        @keyframes glow-6_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-7_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-8_o { 0% { opacity: 0; } 50% { opacity: 0.07; } 100% { opacity: 0; } }
+        @keyframes glow-9_o { 0% { opacity: 0; } 50% { opacity: 0.08; } 100% { opacity: 0; } }
+        @keyframes glow-10_o { 0% { opacity: 0; } 50% { opacity: 0.15; } 100% { opacity: 0; } }
+        @keyframes glow-11_o { 0% { opacity: 0; } 39.2857% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes comet-2_t { 0% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 96.9696% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 97.9797% { transform: translate(22.9978px,22.0044px) scale(0.2,10) translate(-18px,-1px); } 100% { transform: translate(22.9978px,22.0044px) scale(0.2,1) translate(-18px,-1px); } }
+        @keyframes comet-2_o { 0% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes logo-oval-2_o { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes logo-oval-2_do { 0% { stroke-dashoffset: 420.36px; } 100% { stroke-dashoffset: 202.36px; } }
+        @keyframes Basic-line-3_o { 0% { opacity: 0.15; } 100% { opacity: 0; } }
+        @keyframes Basic-line-3_da { 0% { stroke-dasharray: 1678.96px 1678.96px; animation-timing-function: cubic-bezier(0.42,0,1,1); } 89.8437% { stroke-dasharray: 1678.96px 0px; animation-timing-function: cubic-bezier(0,0,0.58,1); } 100% { stroke-dasharray: 0px 1678.96px; } }
+        @keyframes Super-Comet-3_t { 0% { transform: translate(-8px,0px); animation-timing-function: cubic-bezier(0.42,0,1,1); } 100% { transform: translate(1657.5px,0px); } }
+        @keyframes glow-12_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-13_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-14_o { 0% { opacity: 0; } 50% { opacity: 0.07; } 100% { opacity: 0; } }
+        @keyframes glow-15_o { 0% { opacity: 0; } 50% { opacity: 0.08; } 100% { opacity: 0; } }
+        @keyframes glow-16_o { 0% { opacity: 0; } 50% { opacity: 0.1; } 100% { opacity: 0; } }
+        @keyframes glow-17_o { 0% { opacity: 0; } 39.2857% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes comet-3_t { 0% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 97.4358% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 98.2905% { transform: translate(22.9978px,22.0044px) scale(0.2,10) translate(-18px,-1px); } 100% { transform: translate(22.9978px,22.0044px) scale(0.2,1) translate(-18px,-1px); } }
+        @keyframes comet-3_o { 0% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes logo-oval-1_o { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes logo-oval-1_do { 0% { stroke-dashoffset: 429.77px; } 100% { stroke-dashoffset: 187.1px; } }
+        @keyframes Basic-line-4_o { 0% { opacity: 0.15; } 100% { opacity: 0; } }
+        @keyframes Basic-line-4_da { 0% { stroke-dasharray: 1678.96px 1678.96px; animation-timing-function: cubic-bezier(0.42,0,1,1); } 87.963% { stroke-dasharray: 1678.96px 0px; animation-timing-function: cubic-bezier(0,0,0.58,1); } 100% { stroke-dasharray: 0px 1678.96px; } }
+        @keyframes Super-Comet-4_t { 0% { transform: translate(-8px,0px); animation-timing-function: cubic-bezier(0.42,0,1,1); } 100% { transform: translate(1657.5px,0px); } }
+        @keyframes glow-18_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-19_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-20_o { 0% { opacity: 0; } 50% { opacity: 0.07; } 100% { opacity: 0; } }
+        @keyframes glow-21_o { 0% { opacity: 0; } 50% { opacity: 0.08; } 100% { opacity: 0; } }
+        @keyframes glow-22_o { 0% { opacity: 0; } 50% { opacity: 0.1; } 100% { opacity: 0; } }
+        @keyframes glow-23_o { 0% { opacity: 0; } 39.2857% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes comet-4_t { 0% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 96.9072% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 97.9381% { transform: translate(22.9978px,22.0044px) scale(0.2,10) translate(-18px,-1px); } 100% { transform: translate(22.9978px,22.0044px) scale(0.2,1) translate(-18px,-1px); } }
+        @keyframes comet-4_o { 0% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes logo-oval-3_o { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes logo-oval-3_da { 0% { stroke-dasharray: 0px 125.2px; } 65% { stroke-dasharray: 90px 125.2px; } 100% { stroke-dasharray: 68px 125.2px; } }
+        @keyframes logo-oval-3_do { 0% { stroke-dashoffset: 106.2px; } 65% { stroke-dashoffset: 196.06px; } 100% { stroke-dashoffset: 151.2px; } }
+        @keyframes Basic-line-5_o { 0% { opacity: 0.15; } 100% { opacity: 0; } }
+        @keyframes Basic-line-5_da { 0% { stroke-dasharray: 1678.96px 1678.96px; animation-timing-function: cubic-bezier(0.42,0,1,1); } 90.2256% { stroke-dasharray: 1678.96px 0px; animation-timing-function: cubic-bezier(0,0,0.58,1); } 100% { stroke-dasharray: 0px 1678.96px; } }
+        @keyframes Super-Comet-5_t { 0% { transform: translate(-8px,0px); animation-timing-function: cubic-bezier(0.42,0,1,1); } 100% { transform: translate(1657.5px,0px); } }
+        @keyframes glow-24_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-25_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-26_o { 0% { opacity: 0; } 50% { opacity: 0.07; } 100% { opacity: 0; } }
+        @keyframes glow-27_o { 0% { opacity: 0; } 50% { opacity: 0.08; } 100% { opacity: 0; } }
+        @keyframes glow-28_o { 0% { opacity: 0; } 50% { opacity: 0.1; } 100% { opacity: 0; } }
+        @keyframes glow-29_o { 0% { opacity: 0; } 39.2857% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes comet-5_t { 0% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 97.5409% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 98.3606% { transform: translate(22.9978px,22.0044px) scale(0.2,10) translate(-18px,-1px); } 100% { transform: translate(22.9978px,22.0044px) scale(0.2,1) translate(-18px,-1px); } }
+        @keyframes comet-5_o { 0% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes logo-oval-4_o { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes logo-oval-4_da { 0% { stroke-dasharray: 0px 134.59px; } 56.25% { stroke-dasharray: 50px 134.59px; } 100% { stroke-dasharray: 84px 134.59px; } }
+        @keyframes logo-oval-4_do { 0% { stroke-dashoffset: 114.59px; } 56.25% { stroke-dashoffset: 164.21px; } 100% { stroke-dashoffset: 179.21px; } }
+        @keyframes Basic-line-6_o { 0% { opacity: 0.15; } 100% { opacity: 0; } }
+        @keyframes Basic-line-6_da { 0% { stroke-dasharray: 1678.96px 1678.96px; animation-timing-function: cubic-bezier(0.42,0,1,1); } 89.5161% { stroke-dasharray: 1678.96px 0px; animation-timing-function: cubic-bezier(0,0,0.58,1); } 100% { stroke-dasharray: 0px 1678.96px; } }
+        @keyframes Super-Comet-6_t { 0% { transform: translate(-8px,0px); animation-timing-function: cubic-bezier(0.42,0,1,1); } 100% { transform: translate(1657.5px,0px); } }
+        @keyframes glow-30_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-31_o { 0% { opacity: 0; } 50% { opacity: 0.05; } 100% { opacity: 0; } }
+        @keyframes glow-32_o { 0% { opacity: 0; } 50% { opacity: 0.07; } 100% { opacity: 0; } }
+        @keyframes glow-33_o { 0% { opacity: 0; } 50% { opacity: 0.08; } 100% { opacity: 0; } }
+        @keyframes glow-34_o { 0% { opacity: 0; } 50% { opacity: 0.1; } 100% { opacity: 0; } }
+        @keyframes glow-35_o { 0% { opacity: 0; } 39.2857% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes comet-6_t { 0% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 97.3451% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 98.23% { transform: translate(22.9978px,22.0044px) scale(0.2,10) translate(-18px,-1px); } 100% { transform: translate(22.9978px,22.0044px) scale(0.2,1) translate(-18px,-1px); } }
+        @keyframes comet-6_o { 0% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes logo-1_o { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes logo-2_o { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes logo-3_o { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes logo-curve-2_do { 0% { stroke-dashoffset: 310.14px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes Basic-line-7_o { 0% { opacity: 0.1; } 98.5294% { opacity: 0.15; } 100% { opacity: 0; } }
+        @keyframes Basic-line-7_da { 0% { stroke-dasharray: 1678.96px 1678.96px; animation-timing-function: cubic-bezier(0.42,0,1,1); } 91.2162% { stroke-dasharray: 1678.96px 0px; animation-timing-function: cubic-bezier(0,0,0.58,1); } 100% { stroke-dasharray: 0px 1678.96px; } }
+        @keyframes Super-Comet-7_t { 0% { transform: translate(-8px,0px); animation-timing-function: cubic-bezier(0.42,0,1,1); } 100% { transform: translate(1657.5px,0px); } }
+        @keyframes glow-36_o { 0% { opacity: 0; } 50% { opacity: 0.03; } 100% { opacity: 0; } }
+        @keyframes glow-37_o { 0% { opacity: 0; } 50% { opacity: 0.03; } 100% { opacity: 0; } }
+        @keyframes glow-38_o { 0% { opacity: 0; } 50% { opacity: 0.04; } 100% { opacity: 0; } }
+        @keyframes glow-39_o { 0% { opacity: 0; } 50% { opacity: 0.07; } 100% { opacity: 0; } }
+        @keyframes glow-40_o { 0% { opacity: 0; } 50% { opacity: 0.08; } 100% { opacity: 0; } }
+        @keyframes glow-41_o { 0% { opacity: 0; } 39.2857% { opacity: 0.1; } 100% { opacity: 0; } }
+        @keyframes comet-7_t { 0% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 97.8102% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 98.5401% { transform: translate(22.9978px,22.0044px) scale(0.2,10) translate(-18px,-1px); } 100% { transform: translate(22.9978px,22.0044px) scale(0.2,1) translate(-18px,-1px); } }
+        @keyframes comet-7_o { 0% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes logo-curve-1_do { 0% { stroke-dashoffset: 244.28px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes Basic-line-8_o { 0% { opacity: 0.1; } 98.4848% { opacity: 0.15; } 100% { opacity: 0; } }
+        @keyframes Basic-line-8_da { 0% { stroke-dasharray: 1678.96px 1678.96px; animation-timing-function: cubic-bezier(0.42,0,1,1); } 90.8451% { stroke-dasharray: 1678.96px 0px; animation-timing-function: cubic-bezier(0,0,0.58,1); } 100% { stroke-dasharray: 0px 1678.96px; } }
+        @keyframes Super-Comet-8_t { 0% { transform: translate(-8px,0px); animation-timing-function: cubic-bezier(0.42,0,1,1); } 100% { transform: translate(1657.5px,0px); } }
+        @keyframes glow-42_o { 0% { opacity: 0; } 50% { opacity: 0.03; } 100% { opacity: 0; } }
+        @keyframes glow-43_o { 0% { opacity: 0; } 50% { opacity: 0.03; } 100% { opacity: 0; } }
+        @keyframes glow-44_o { 0% { opacity: 0; } 50% { opacity: 0.04; } 100% { opacity: 0; } }
+        @keyframes glow-45_o { 0% { opacity: 0; } 50% { opacity: 0.07; } 100% { opacity: 0; } }
+        @keyframes glow-46_o { 0% { opacity: 0; } 50% { opacity: 0.08; } 100% { opacity: 0; } }
+        @keyframes glow-47_o { 0% { opacity: 0; } 39.2857% { opacity: 0.1; } 100% { opacity: 0; } }
+        @keyframes comet-8_t { 0% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 97.7099% { transform: translate(22.9978px,22.0044px) scale(3,1) translate(-18px,-1px); animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 98.4732% { transform: translate(22.9978px,22.0044px) scale(0.2,10) translate(-18px,-1px); } 100% { transform: translate(22.9978px,22.0044px) scale(0.2,1) translate(-18px,-1px); } }
+        @keyframes comet-8_o { 0% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes icon-form_o { 0% { opacity: 0; } 33.3333% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes hor-1_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes hor-1_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes hor-2_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes hor-2_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes hor-4_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes hor-4_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes hor-3_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes hor-3_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes hor-6_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes hor-6_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes hor-5_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes hor-5_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes ver-1_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes ver-1_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes ver-2_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes ver-2_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes ver-4_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes ver-4_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes ver-3_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes ver-3_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes ver-6_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes ver-6_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes ver-5_o { 0% { opacity: 0.1; } 20% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes ver-5_do { 0% { stroke-dashoffset: 165px; animation-timing-function: cubic-bezier(0.42,0,0.58,1); } 100% { stroke-dashoffset: 0px; } }
+        @keyframes cross2_o { 0% { opacity: 0.05; } 27.2727% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes cross2_do { 0% { stroke-dashoffset: 469.52px; } 100% { stroke-dashoffset: 0px; } }
+        @keyframes cross1_o { 0% { opacity: 0.05; } 27.2727% { opacity: 0.2; } 100% { opacity: 0; } }
+        @keyframes cross1_do { 0% { stroke-dashoffset: 469.52px; } 100% { stroke-dashoffset: 0px; } }
+    </style>
+    <g id="BG-Group" opacity="1" transform="translate(800,800) translate(-1679.5,-1059.63)" style="animation: BG-Group_t 6s linear both, BG-Group_o 1s linear 5s both;">
+        <ellipse id="Big-Oval" stroke="#56b8ff" rx="166" ry="166" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.2" stroke-dasharray="1042.74 1042.74" stroke-dashoffset="1042.74" transform="translate(1679.5,1059.63) rotate(-90)" style="animation: Big-Oval_o 4.667s linear 1.333s both, Big-Oval_do 0.767s linear 1.333s both;"/>
+        <g id="Super-Line" transform="translate(850.75,893.126) translate(-850.75,-22)">
+            <path id="Basic-line" d="M799.454,567.004L-879.501,567.004" stroke="#56b8ff" stroke-linecap="square" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.1" stroke-dasharray="1678.96 1678.96" stroke-dashoffset="1678.96" transform="translate(879.501,-545)" style="animation: Basic-line_o 0.033s linear 1.55s both, Basic-line_da 1.583s linear both;"/>
+            <g id="Super-Comet" transform="translate(14,22) translate(-22,-22)" style="animation: Super-Comet_t 1.367s linear both;">
+                <ellipse id="glow-0" rx="22" ry="22" fill="#56b8ff" stroke="none" opacity="0" transform="translate(3,3) translate(19,19)" style="animation: glow-0_o 0.3s linear 1.267s both;"/>
+                <ellipse id="glow-1" rx="16" ry="16" fill="#56b8ff" stroke="none" opacity="0" transform="translate(9,9) translate(13,13)" style="animation: glow-1_o 0.333s linear 1.25s both;"/>
+                <ellipse id="glow-2" rx="11" ry="11" fill="#56b8ff" stroke="none" opacity="0" transform="translate(14,14) translate(8,8)" style="animation: glow-2_o 0.367s linear 1.233s both;"/>
+                <ellipse id="glow-3" rx="7" ry="7" fill="#56b8ff" stroke="none" opacity="0" transform="translate(18,18) translate(4,4)" style="animation: glow-3_o 0.4s linear 1.217s both;"/>
+                <ellipse id="glow-4" rx="4" ry="4" fill="#56b8ff" stroke="none" opacity="0" transform="translate(21,21) translate(1,1)" style="animation: glow-4_o 0.433s linear 1.2s both;"/>
+                <ellipse id="glow-5" rx="1.9978" ry="1.9978" fill="#56b8ff" stroke="none" opacity="0" transform="translate(23.0022,23.0022) translate(-1.0022,-1.0022)" style="animation: glow-5_o 0.467s linear 1.183s both;"/>
+                <path id="comet" fill="#ffffff" opacity="1" stroke="none" d="M0,1L16.4572,0C18.5143,0,18.5143,2,16.4572,2C13.0628,2,0,1,0,1z" transform="translate(22.9978,22.0044) scale(3,1) translate(-18,-1)" style="animation: comet_t 1.4s linear both, comet_o 0.217s linear 1.367s both;"/>
+            </g>
+        </g>
+        <ellipse id="Small-Oval" stroke="#56b8ff" rx="100" ry="100" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.2" stroke-dasharray="627.98000000000002 627.98000000000002" stroke-dashoffset="627.98000000000002" transform="translate(1679.5,1059.63) rotate(-90)" style="animation: Small-Oval_o 4.417s linear 1.583s both, Small-Oval_do 0.5s linear 1.583s both;"/>
+        <g id="Super-Line-2" transform="translate(850.75,959.626) translate(-850.75,-22)">
+            <path id="Basic-line-2" d="M799.454,567.004L-879.501,567.004" stroke="#56b8ff" stroke-linecap="square" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.1" stroke-dasharray="1678.96 1678.96" stroke-dashoffset="1678.96" transform="translate(879.501,-545)" style="animation: Basic-line-2_o 0.033s linear 1.667s both, Basic-line-2_da 1.833s linear both;"/>
+            <g id="Super-Comet-2" transform="translate(14,22) translate(-22,-22)" style="animation: Super-Comet-2_t 1.617s linear both;">
+                <ellipse id="glow-6" rx="22" ry="22" fill="#56b8ff" stroke="none" opacity="0" transform="translate(3,3) translate(19,19)" style="animation: glow-6_o 0.3s linear 1.517s both;"/>
+                <ellipse id="glow-7" rx="16" ry="16" fill="#56b8ff" stroke="none" opacity="0" transform="translate(9,9) translate(13,13)" style="animation: glow-7_o 0.333s linear 1.5s both;"/>
+                <ellipse id="glow-8" rx="11" ry="11" fill="#56b8ff" stroke="none" opacity="0" transform="translate(14,14) translate(8,8)" style="animation: glow-8_o 0.367s linear 1.483s both;"/>
+                <ellipse id="glow-9" rx="7" ry="7" fill="#56b8ff" stroke="none" opacity="0" transform="translate(18,18) translate(4,4)" style="animation: glow-9_o 0.4s linear 1.467s both;"/>
+                <ellipse id="glow-10" rx="4" ry="4" fill="#56b8ff" stroke="none" opacity="0" transform="translate(21,21) translate(1,1)" style="animation: glow-10_o 0.433s linear 1.45s both;"/>
+                <ellipse id="glow-11" rx="1.9978" ry="1.9978" fill="#56b8ff" stroke="none" opacity="0" transform="translate(23.0022,23.0022) translate(-1.0022,-1.0022)" style="animation: glow-11_o 0.467s linear 1.433s both;"/>
+                <path id="comet-2" fill="#ffffff" opacity="1" stroke="none" d="M0,1L16.4572,0C18.5143,0,18.5143,2,16.4572,2C13.0628,2,0,1,0,1z" transform="translate(22.9978,22.0044) scale(3,1) translate(-18,-1)" style="animation: comet-2_t 1.65s linear both, comet-2_o 0.217s linear 1.617s both;"/>
+            </g>
+        </g>
+        <ellipse id="logo-oval-2" stroke="#ed4159" rx="67" ry="67" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0" stroke-dasharray="420.36000000000001 420.36000000000001" stroke-dashoffset="420.36000000000001" stroke-linecap="round" stroke-linejoin="round" transform="translate(1685.5,1066.63) rotate(136)" style="animation: logo-oval-2_o 0.017s linear 1.9s both, logo-oval-2_do 0.217s linear 1.917s both;"/>
+        <g id="Super-Line-3" transform="translate(2222.96,1699.1) rotate(-135) translate(-850.75,-22)">
+            <path id="Basic-line-3" d="M799.454,567.004L-879.501,567.004" stroke="#ed4159" stroke-linecap="square" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.15" stroke-dasharray="1678.96 1678.96" stroke-dashoffset="1678.96" transform="translate(879.501,-545)" style="animation: Basic-line-3_o 0.033s linear 2.1s both, Basic-line-3_da 2.133s linear both;"/>
+            <g id="Super-Comet-3" transform="translate(14,22) translate(-22,-22)" style="animation: Super-Comet-3_t 1.917s linear both;">
+                <ellipse id="glow-12" rx="22" ry="22" fill="#ed4159" stroke="none" opacity="0" transform="translate(3,3) translate(19,19)" style="animation: glow-12_o 0.3s linear 1.817s both;"/>
+                <ellipse id="glow-13" rx="16" ry="16" fill="#ed4159" stroke="none" opacity="0" transform="translate(9,9) translate(13,13)" style="animation: glow-13_o 0.333s linear 1.8s both;"/>
+                <ellipse id="glow-14" rx="11" ry="11" fill="#ed4159" stroke="none" opacity="0" transform="translate(14,14) translate(8,8)" style="animation: glow-14_o 0.367s linear 1.783s both;"/>
+                <ellipse id="glow-15" rx="7" ry="7" fill="#ed4159" stroke="none" opacity="0" transform="translate(18,18) translate(4,4)" style="animation: glow-15_o 0.4s linear 1.767s both;"/>
+                <ellipse id="glow-16" rx="4" ry="4" fill="#ed4159" stroke="none" opacity="0" transform="translate(21,21) translate(1,1)" style="animation: glow-16_o 0.433s linear 1.75s both;"/>
+                <ellipse id="glow-17" rx="1.9978" ry="1.9978" fill="#ed4159" stroke="none" opacity="0" transform="translate(23.0022,23.0022) translate(-1.0022,-1.0022)" style="animation: glow-17_o 0.467s linear 1.733s both;"/>
+                <path id="comet-3" fill="#ffffff" opacity="1" stroke="none" d="M0,1L16.4572,0C18.5143,0,18.5143,2,16.4572,2C13.0628,2,0,1,0,1z" transform="translate(22.9978,22.0044) scale(3,1) translate(-18,-1)" style="animation: comet-3_t 1.95s linear both, comet-3_o 0.217s linear 1.917s both;"/>
+            </g>
+        </g>
+        <ellipse id="logo-oval-1" stroke="#ed4159" rx="68.5" ry="68.5" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0" stroke-dasharray="429.76999999999998 429.76999999999998" stroke-dashoffset="429.76999999999998" stroke-linecap="round" stroke-linejoin="round" transform="translate(1679,1059.13) rotate(128)" style="animation: logo-oval-1_o 0.017s linear 1.567s both, logo-oval-1_do 0.25s linear 1.583s both;"/>
+        <g id="Super-Line-4" transform="translate(2290.01,1623.32) rotate(-142) translate(-850.75,-22)">
+            <path id="Basic-line-4" d="M799.454,567.004L-879.501,567.004" stroke="#ed4159" stroke-linecap="square" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.15" stroke-dasharray="1678.96 1678.96" stroke-dashoffset="1678.96" transform="translate(879.501,-545)" style="animation: Basic-line-4_o 0.033s linear 1.767s both, Basic-line-4_da 1.8s linear both;"/>
+            <g id="Super-Comet-4" transform="translate(14,22) translate(-22,-22)" style="animation: Super-Comet-4_t 1.583s linear both;">
+                <ellipse id="glow-18" rx="22" ry="22" fill="#ed4159" stroke="none" opacity="0" transform="translate(3,3) translate(19,19)" style="animation: glow-18_o 0.3s linear 1.483s both;"/>
+                <ellipse id="glow-19" rx="16" ry="16" fill="#ed4159" stroke="none" opacity="0" transform="translate(9,9) translate(13,13)" style="animation: glow-19_o 0.333s linear 1.467s both;"/>
+                <ellipse id="glow-20" rx="11" ry="11" fill="#ed4159" stroke="none" opacity="0" transform="translate(14,14) translate(8,8)" style="animation: glow-20_o 0.367s linear 1.45s both;"/>
+                <ellipse id="glow-21" rx="7" ry="7" fill="#ed4159" stroke="none" opacity="0" transform="translate(18,18) translate(4,4)" style="animation: glow-21_o 0.4s linear 1.433s both;"/>
+                <ellipse id="glow-22" rx="4" ry="4" fill="#ed4159" stroke="none" opacity="0" transform="translate(21,21) translate(1,1)" style="animation: glow-22_o 0.433s linear 1.417s both;"/>
+                <ellipse id="glow-23" rx="1.9978" ry="1.9978" fill="#ed4159" stroke="none" opacity="0" transform="translate(23.0022,23.0022) translate(-1.0022,-1.0022)" style="animation: glow-23_o 0.467s linear 1.4s both;"/>
+                <path id="comet-4" fill="#ffffff" opacity="1" stroke="none" d="M0,1L16.4572,0C18.5143,0,18.5143,2,16.4572,2C13.0628,2,0,1,0,1z" transform="translate(22.9978,22.0044) scale(3,1) translate(-18,-1)" style="animation: comet-4_t 1.617s linear both, comet-4_o 0.217s linear 1.583s both;"/>
+            </g>
+        </g>
+        <ellipse id="logo-oval-3" stroke="#ed4159" rx="20" ry="20" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0" stroke-dasharray="0 125.2" stroke-dashoffset="106.2" stroke-linecap="round" stroke-linejoin="round" transform="translate(879.5,259.626) translate(825,828)" style="animation: logo-oval-3_o 0.017s linear 2.4s both, logo-oval-3_da 0.333s linear 2.417s both, logo-oval-3_do 0.333s linear 2.417s both;"/>
+        <g id="Super-Line-5" transform="translate(2359.98,582.145) rotate(141) translate(-850.75,-22)">
+            <path id="Basic-line-5" d="M799.454,567.004L-879.501,567.004" stroke="#ed4159" stroke-linecap="square" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.15" stroke-dasharray="1678.96 1678.96" stroke-dashoffset="1678.96" transform="translate(879.501,-545)" style="animation: Basic-line-5_o 0.033s linear 2.6s both, Basic-line-5_da 2.217s linear 0.417s both;"/>
+            <g id="Super-Comet-5" transform="translate(14,22) translate(-22,-22)" style="animation: Super-Comet-5_t 2s linear 0.417s both;">
+                <ellipse id="glow-24" rx="22" ry="22" fill="#ed4159" stroke="none" opacity="0" transform="translate(3,3) translate(19,19)" style="animation: glow-24_o 0.3s linear 2.317s both;"/>
+                <ellipse id="glow-25" rx="16" ry="16" fill="#ed4159" stroke="none" opacity="0" transform="translate(9,9) translate(13,13)" style="animation: glow-25_o 0.333s linear 2.3s both;"/>
+                <ellipse id="glow-26" rx="11" ry="11" fill="#ed4159" stroke="none" opacity="0" transform="translate(14,14) translate(8,8)" style="animation: glow-26_o 0.367s linear 2.283s both;"/>
+                <ellipse id="glow-27" rx="7" ry="7" fill="#ed4159" stroke="none" opacity="0" transform="translate(18,18) translate(4,4)" style="animation: glow-27_o 0.4s linear 2.267s both;"/>
+                <ellipse id="glow-28" rx="4" ry="4" fill="#ed4159" stroke="none" opacity="0" transform="translate(21,21) translate(1,1)" style="animation: glow-28_o 0.433s linear 2.25s both;"/>
+                <ellipse id="glow-29" rx="1.9978" ry="1.9978" fill="#ed4159" stroke="none" opacity="0" transform="translate(23.0022,23.0022) translate(-1.0022,-1.0022)" style="animation: glow-29_o 0.467s linear 2.233s both;"/>
+                <path id="comet-5" fill="#ffffff" opacity="1" stroke="none" d="M0,1L16.4572,0C18.5143,0,18.5143,2,16.4572,2C13.0628,2,0,1,0,1z" transform="translate(22.9978,22.0044) scale(3,1) translate(-18,-1)" style="animation: comet-5_t 2.033s linear 0.417s both, comet-5_o 0.217s linear 2.417s both;"/>
+            </g>
+        </g>
+        <ellipse id="logo-oval-4" stroke="#ed4159" rx="21.5" ry="21.5" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0" stroke-dasharray="0 134.59" stroke-dashoffset="114.59" stroke-linecap="round" stroke-linejoin="round" transform="translate(879.5,259.626) translate(820.5,824.5)" style="animation: logo-oval-4_o 0.017s linear 2.1s both, logo-oval-4_da 0.267s linear 2.117s both, logo-oval-4_do 0.267s linear 2.117s both;"/>
+        <g id="Super-Line-6" transform="translate(2337.98,558.145) rotate(139) translate(-850.75,-22)">
+            <path id="Basic-line-6" d="M799.454,567.004L-879.501,567.004" stroke="#ed4159" stroke-linecap="square" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.15" stroke-dasharray="1678.96 1678.96" stroke-dashoffset="1678.96" transform="translate(879.501,-545)" style="animation: Basic-line-6_o 0.033s linear 2.3s both, Basic-line-6_da 2.067s linear 0.267s both;"/>
+            <g id="Super-Comet-6" transform="translate(14,22) translate(-22,-22)" style="animation: Super-Comet-6_t 1.85s linear 0.267s both;">
+                <ellipse id="glow-30" rx="22" ry="22" fill="#ed4159" stroke="none" opacity="0" transform="translate(3,3) translate(19,19)" style="animation: glow-30_o 0.3s linear 2.017s both;"/>
+                <ellipse id="glow-31" rx="16" ry="16" fill="#ed4159" stroke="none" opacity="0" transform="translate(9,9) translate(13,13)" style="animation: glow-31_o 0.333s linear 2s both;"/>
+                <ellipse id="glow-32" rx="11" ry="11" fill="#ed4159" stroke="none" opacity="0" transform="translate(14,14) translate(8,8)" style="animation: glow-32_o 0.367s linear 1.983s both;"/>
+                <ellipse id="glow-33" rx="7" ry="7" fill="#ed4159" stroke="none" opacity="0" transform="translate(18,18) translate(4,4)" style="animation: glow-33_o 0.4s linear 1.967s both;"/>
+                <ellipse id="glow-34" rx="4" ry="4" fill="#ed4159" stroke="none" opacity="0" transform="translate(21,21) translate(1,1)" style="animation: glow-34_o 0.433s linear 1.95s both;"/>
+                <ellipse id="glow-35" rx="1.9978" ry="1.9978" fill="#ed4159" stroke="none" opacity="0" transform="translate(23.0022,23.0022) translate(-1.0022,-1.0022)" style="animation: glow-35_o 0.467s linear 1.933s both;"/>
+                <path id="comet-6" fill="#ffffff" opacity="1" stroke="none" d="M0,1L16.4572,0C18.5143,0,18.5143,2,16.4572,2C13.0628,2,0,1,0,1z" transform="translate(22.9978,22.0044) scale(3,1) translate(-18,-1)" style="animation: comet-6_t 1.883s linear 0.267s both, comet-6_o 0.217s linear 2.117s both;"/>
+            </g>
+        </g>
+        <g id="Logo/Top-Sign/RW-Mercury-Development" fill-rule="nonzero" stroke="none" stroke-width="1" fill="none" transform="translate(1533.5,952.626)">
+            <path id="logo-1" d="M99.8819,156.931C85.8426,144.462,77,126.298,77,106.073C77,68.4772,107.555,38,145.246,38C169.637,38,191.039,50.7623,203.107,69.9572C190.721,55.846,172.528,46.9346,152.248,46.9346C114.93,46.9346,84.6777,77.1099,84.6777,114.333C84.6777,130.491,90.3779,145.32,99.8819,156.931z" fill="#ED4159" opacity="0" style="animation: logo-1_o 0.5s linear 2.083s both;"/>
+            <path id="logo-2" d="M160.866,152.102C151.859,149.613,145.246,141.377,145.246,131.6C145.246,119.851,154.795,110.327,166.573,110.327C174.005,110.327,180.548,114.118,184.366,119.867C180.852,116.839,176.273,115.007,171.266,115.007C160.194,115.007,151.218,123.96,151.218,135.004C151.218,142.249,155.082,148.595,160.866,152.102z" fill="#ED4159" opacity="0" style="animation: logo-2_o 0.5s linear 2.55s both;"/>
+            <path id="logo-3" d="M26.9875,17.739C22.1837,24.2362,123.053,102.615,148.149,119.282C148.004,119.495,147.024,121,147.024,121.075C131.596,113.561,112.938,101.15,86.436,82.8785C33.1654,46.1533,-5.23602,9.9216,0.658768,1.9656C6.42725,-5.81993,52.4901,16.3479,104.385,51.7162C104.255,51.8123,104.126,51.9089,103.997,52.006C88.6079,43.5631,30.7584,12.6512,26.9875,17.739z" fill="#FFFFFF" opacity="0" style="animation: logo-3_o 0.483s linear 3.317s both;"/>
+        </g>
+        <path id="logo-curve-2" d="M147.5,121.5C122.5,108,97.137,90.2561,86.436,82.8785C33.1654,46.1533,-5.23602,9.9216,0.658768,1.9656C5.80425,-4.97909,44.6456,12.1812,104.5,52" stroke="#ffffff" fill="none" opacity="1" stroke-dasharray="310.13999999999999 310.13999999999999" stroke-dashoffset="310.14000000000004" transform="translate(1533.5,952.626)" style="animation: logo-curve-2_do 0.367s linear 2.9s both;"/>
+        <g id="Super-Line-7" transform="translate(2391.33,1500.93) rotate(-149) translate(-850.75,-22)">
+            <path id="Basic-line-7" d="M799.454,567.004L-879.501,567.004" stroke="#ffffff" stroke-linecap="square" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.1" stroke-dasharray="1678.96 1678.96" stroke-dashoffset="1678.96" transform="translate(879.501,-545)" style="animation: Basic-line-7_o 2.267s linear 0.883s both, Basic-line-7_da 2.467s linear 0.683s both;"/>
+            <g id="Super-Comet-7" transform="translate(14,22) translate(-22,-22)" style="animation: Super-Comet-7_t 2.25s linear 0.683s both;">
+                <ellipse id="glow-36" rx="22" ry="22" fill="#ffffff" stroke="none" opacity="0" transform="translate(3,3) translate(19,19)" style="animation: glow-36_o 0.3s linear 2.833s both;"/>
+                <ellipse id="glow-37" rx="16" ry="16" fill="#ffffff" stroke="none" opacity="0" transform="translate(9,9) translate(13,13)" style="animation: glow-37_o 0.333s linear 2.817s both;"/>
+                <ellipse id="glow-38" rx="11" ry="11" fill="#ffffff" stroke="none" opacity="0" transform="translate(14,14) translate(8,8)" style="animation: glow-38_o 0.367s linear 2.8s both;"/>
+                <ellipse id="glow-39" rx="7" ry="7" fill="#ffffff" stroke="none" opacity="0" transform="translate(18,18) translate(4,4)" style="animation: glow-39_o 0.4s linear 2.783s both;"/>
+                <ellipse id="glow-40" rx="4" ry="4" fill="#ffffff" stroke="none" opacity="0" transform="translate(21,21) translate(1,1)" style="animation: glow-40_o 0.433s linear 2.767s both;"/>
+                <ellipse id="glow-41" rx="1.9978" ry="1.9978" fill="#ffffff" stroke="none" opacity="0" transform="translate(23.0022,23.0022) translate(-1.0022,-1.0022)" style="animation: glow-41_o 0.467s linear 2.75s both;"/>
+                <path id="comet-7" fill="#ffffff" opacity="1" stroke="none" d="M0,1L16.4572,0C18.5143,0,18.5143,2,16.4572,2C13.0628,2,0,1,0,1z" transform="translate(22.9978,22.0044) scale(3,1) translate(-18,-1)" style="animation: comet-7_t 2.283s linear 0.683s both, comet-7_o 0.217s linear 2.933s both;"/>
+            </g>
+        </g>
+        <path id="logo-curve-1" d="M148.5,119.5C81.5,72,23.5375,22.4052,26.9875,17.739C29.9859,13.6935,74.5,35.5,103.895,52.0336" stroke="#ffffff" fill="none" opacity="1" stroke-dasharray="244.28 244.28" stroke-dashoffset="244.28" transform="translate(1533.5,952.626)" style="animation: logo-curve-1_do 0.333s linear 3.133s both;"/>
+        <g id="Super-Line-8" transform="translate(2352.22,1559.22) rotate(-144) translate(-850.75,-22)">
+            <path id="Basic-line-8" d="M799.454,567.004L-879.501,567.004" stroke="#ffffff" stroke-linecap="square" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.1" stroke-dasharray="1678.96 1678.96" stroke-dashoffset="1678.96" transform="translate(879.501,-545)" style="animation: Basic-line-8_o 2.2s linear 1.167s both, Basic-line-8_da 2.367s linear 1s both;"/>
+            <g id="Super-Comet-8" transform="translate(14,22) translate(-22,-22)" style="animation: Super-Comet-8_t 2.15s linear 1s both;">
+                <ellipse id="glow-42" rx="22" ry="22" fill="#ffffff" stroke="none" opacity="0" transform="translate(3,3) translate(19,19)" style="animation: glow-42_o 0.3s linear 3.05s both;"/>
+                <ellipse id="glow-43" rx="16" ry="16" fill="#ffffff" stroke="none" opacity="0" transform="translate(9,9) translate(13,13)" style="animation: glow-43_o 0.333s linear 3.033s both;"/>
+                <ellipse id="glow-44" rx="11" ry="11" fill="#ffffff" stroke="none" opacity="0" transform="translate(14,14) translate(8,8)" style="animation: glow-44_o 0.367s linear 3.017s both;"/>
+                <ellipse id="glow-45" rx="7" ry="7" fill="#ffffff" stroke="none" opacity="0" transform="translate(18,18) translate(4,4)" style="animation: glow-45_o 0.4s linear 3s both;"/>
+                <ellipse id="glow-46" rx="4" ry="4" fill="#ffffff" stroke="none" opacity="0" transform="translate(21,21) translate(1,1)" style="animation: glow-46_o 0.433s linear 2.983s both;"/>
+                <ellipse id="glow-47" rx="1.9978" ry="1.9978" fill="#ffffff" stroke="none" opacity="0" transform="translate(23.0022,23.0022) translate(-1.0022,-1.0022)" style="animation: glow-47_o 0.467s linear 2.967s both;"/>
+                <path id="comet-8" fill="#ffffff" opacity="1" stroke="none" d="M0,1L16.4572,0C18.5143,0,18.5143,2,16.4572,2C13.0628,2,0,1,0,1z" transform="translate(22.9978,22.0044) scale(3,1) translate(-18,-1)" style="animation: comet-8_t 2.183s linear 1s both, comet-8_o 0.217s linear 3.15s both;"/>
+            </g>
+        </g>
+        <rect id="icon-form" width="380" height="380" fill="none" stroke="#56b8ff" rx="81" opacity="0" stroke-dasharray="none" stroke-dashoffset="1380.3599999999999" transform="translate(1679.5,1059.63) translate(-190,-190)" style="animation: icon-form_o 6s linear both;"/>
+        <path id="hor-1" d="M-167,0L-332,0" stroke="#56b8ff" fill="none" stroke-linecap="square" stroke-dasharray="165 165" stroke-dashoffset="165" opacity="0.1" transform="translate(1845.5,1226.13)" style="animation: hor-1_o 5s linear 1s both, hor-1_do 0.5s linear 1s both;"/>
+        <path id="hor-2" d="M-332,0L-167,0" stroke="#56b8ff" fill="none" stroke-linecap="square" stroke-dasharray="165 165" stroke-dashoffset="165" opacity="0.1" transform="translate(2011.5,1226.13)" style="animation: hor-2_o 5s linear 1s both, hor-2_do 0.5s linear 1s both;"/>
+        <path id="hor-4" d="M-167,0L-332,0" stroke="#56b8ff" fill="none" stroke-linecap="square" stroke-dasharray="165 165" stroke-dashoffset="165" opacity="0.1" transform="translate(1845.5,893.126)" style="animation: hor-4_o 5s linear 1s both, hor-4_do 0.5s linear 1s both;"/>
+        <path id="hor-3" d="M-332,0L-167,0" stroke="#56b8ff" fill="none" stroke-linecap="square" stroke-dasharray="165 165" stroke-dashoffset="165" opacity="0.1" transform="translate(2011.5,893.126)" style="animation: hor-3_o 5s linear 1s both, hor-3_do 0.5s linear 1s both;"/>
+        <path id="hor-6" d="M-167,0L-332,0" stroke="#56b8ff" fill="none" stroke-linecap="square" stroke-dasharray="165 165" stroke-dashoffset="165" opacity="0.1" transform="translate(1845.5,1059.63)" style="animation: hor-6_o 5s linear 1s both, hor-6_do 0.5s linear 1s both;"/>
+        <path id="hor-5" d="M-332,0L-167,0" stroke="#56b8ff" fill="none" stroke-linecap="square" stroke-dasharray="165 165" stroke-dashoffset="165" opacity="0.1" transform="translate(2011.5,1059.63)" style="animation: hor-5_o 5s linear 1s both, hor-5_do 0.5s linear 1s both;"/>
+        <path id="ver-1" d="M0,165L0,0" stroke="#56b8ff" fill="none" stroke-linecap="square" opacity="0.1" stroke-dashoffset="165" stroke-dasharray="165 165" transform="translate(1513,893.626)" style="animation: ver-1_o 5s linear 1s both, ver-1_do 0.5s linear 1s both;"/>
+        <path id="ver-2" d="M0,0L0,165" stroke="#56b8ff" fill="none" stroke-linecap="square" opacity="0.1" stroke-dashoffset="165" stroke-dasharray="165 165" transform="translate(1513,1059.63)" style="animation: ver-2_o 5s linear 1s both, ver-2_do 0.5s linear 1s both;"/>
+        <path id="ver-4" d="M0,165L0,0" stroke="#56b8ff" fill="none" stroke-linecap="square" opacity="0.1" stroke-dashoffset="165" stroke-dasharray="165 165" transform="translate(1845.5,893.626)" style="animation: ver-4_o 5s linear 1s both, ver-4_do 0.5s linear 1s both;"/>
+        <path id="ver-3" d="M0,0L0,165" stroke="#56b8ff" fill="none" stroke-linecap="square" opacity="0.1" stroke-dashoffset="165" stroke-dasharray="165 165" transform="translate(1845.5,1059.63)" style="animation: ver-3_o 5s linear 1s both, ver-3_do 0.5s linear 1s both;"/>
+        <path id="ver-6" d="M0,165L0,0" stroke="#56b8ff" fill="none" stroke-linecap="square" opacity="0.1" stroke-dashoffset="165" stroke-dasharray="165 165" transform="translate(1679.52,893.626)" style="animation: ver-6_o 5s linear 1s both, ver-6_do 0.5s linear 1s both;"/>
+        <path id="ver-5" d="M0,0L0,165" stroke="#56b8ff" fill="none" stroke-linecap="square" opacity="0.1" stroke-dashoffset="165" stroke-dasharray="165 165" transform="translate(1679.52,1059.63)" style="animation: ver-5_o 5s linear 1s both, ver-5_do 0.5s linear 1s both;"/>
+        <path id="cross2" d="M332,-332L0,0" stroke="#56b8ff" fill="none" stroke-linecap="square" opacity="0.05" stroke-dashoffset="469.51999999999998" stroke-dasharray="469.51999999999998 469.51999999999998" transform="translate(1513.5,1225.63)" style="animation: cross2_o 5.5s linear 0.5s both, cross2_do 0.5s linear 0.5s both;"/>
+        <path id="cross1" d="M0,0L332,332" stroke="#56b8ff" fill="none" stroke-linecap="square" opacity="0.05" stroke-dasharray="469.51999999999998 469.51999999999998" stroke-dashoffset="469.51999999999998" transform="translate(1513.5,893.626)" style="animation: cross1_o 5.5s linear 0.5s both, cross1_do 0.5s linear 0.5s both;"/>
+    </g>
+</svg>

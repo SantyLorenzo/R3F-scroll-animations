@@ -25,7 +25,8 @@ body {
   height: auto;
   min-height: 100%;
   font-size: 10px;
-  scroll-behavior: initial;
+
+  padding-right: 0 !important;
 }
 
 #root {
