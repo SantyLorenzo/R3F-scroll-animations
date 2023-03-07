@@ -4,12 +4,11 @@ import { useLenis } from "@studio-freight/react-lenis";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
-import { DraggableMesh } from "../../components/DraggableMesh";
 import { Box } from "../Box/Box";
 import { CeilingMain } from "../CeilingMain/CeilingMain";
+import { Doors } from "../Doors/Doors";
 import { Handrails } from "../Handrails/Handrails";
 import { Hatch } from "../Hatch/Hatch";
-import { Doors } from "../index";
 import { MiniTerminal } from "../MiniTerminal/MiniTerminal";
 import { Panel } from "../Panel/Panel";
 import { Partition } from "../Partition/Partition";
@@ -26,10 +25,7 @@ import { GLTFAction, GLTFResult } from "./types";
 export const Building = (props: JSX.IntrinsicElements["group"]) => {
   const group = useRef<THREE.Group>(null);
   const movingAppsRef = useRef<THREE.Mesh>(null);
-  const caseObjectRef = useRef<THREE.Mesh>(null);
-  const worldObjectRef = useRef<THREE.Mesh>(null);
   const cameraHelperRef = useRef<THREE.Mesh>(null);
-  const whatWeDoObjectRef = useRef<THREE.Mesh>(null);
   const { nodes, materials, animations } = useGLTF(
     buildingModel
   ) as unknown as GLTFResult;
