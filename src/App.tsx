@@ -7,7 +7,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Loader } from "./components/Loader";
 import { ModalWhatWeDo } from "./components/Modal/ModalWhatWeDo";
-import { Building } from "./models/Building/Building.js";
+import { Building } from "./models/Building/Building";
 import { About } from "./sections/about/About";
 import { Cases } from "./sections/cases/Cases";
 import { Contacts } from "./sections/contacts/Contacts";
