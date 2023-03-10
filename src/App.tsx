@@ -14,11 +14,17 @@ import { Contacts } from "./sections/contacts/Contacts";
 import { OurClients } from "./sections/our-clients/ourClients";
 import { Verticals } from "./sections/verticals/Verticals";
 import { WhatWeDo } from "./sections/what-we-do/WhatWeDo";
+import { WhatWeDoAreas } from "./sections/what-we-do-areas/WhatWeDoAreas";
 
 export const App = () => {
   return (
     <>
-      <ReactLenis root options={{ duration: 1 }}>
+      <ReactLenis
+        root
+        options={{
+          duration: 5,
+        }}
+      >
         <Canvas
           camera={{ zoom: 1.3 }}
           style={{
@@ -46,6 +52,7 @@ export const App = () => {
         <main>
           <About />
           <WhatWeDo />
+          <WhatWeDoAreas />
           <Verticals />
           <OurClients />
           <Cases />

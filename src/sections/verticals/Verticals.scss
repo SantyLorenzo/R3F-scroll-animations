@@ -2,8 +2,28 @@
 @import "/src/styles/mixins/font-mixin";
 @import "/src/styles/mixins/base";
 
+// .verticals {
+//   top: 25%;
+// }
+
+// .verticals-container {
+
+// }
+
+.verticals-container {
+  height: 100vh;
+  margin-bottom: 200px;
+}
+
+.verticals-list-container {
+  height: 200vh;
+  margin-bottom: 200px;
+}
+
 .verticals__wrapper {
   padding: 135px 0;
+  height: 40vh;
+  margin-bottom: 200px;
 }
 
 .verticals__description,

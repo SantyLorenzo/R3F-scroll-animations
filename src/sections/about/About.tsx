@@ -2,6 +2,7 @@ import "./About.scss";
 
 import { ReactComponent as Play } from "../../assets/images/icon/button/play.svg";
 import { ReactComponent as WeAre } from "../../assets/images/text/we-are.svg";
+import { StickySection } from "../../components/StickySection/StickySection";
 
 export const About = () => {
   return (

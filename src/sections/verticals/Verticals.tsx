@@ -20,6 +20,7 @@ import multimedia2x from "../../assets/images/content/multimedia@2x.png";
 import multimediaWebp2x from "../../assets/images/content/multimedia@2x.webp";
 import { ReactComponent as VerticalsSvg } from "../../assets/images/text/verticals.svg";
 import { Picture } from "../../components/Picture/Picture";
+import { StickySection } from "../../components/StickySection/StickySection";
 
 const projectsList = [
   {
@@ -64,23 +65,24 @@ const projectsList = [
   },
 ];
 
-export const Verticals = () => {
-  return (
-    <section className="verticals">
+export const Verticals = () => (
+  <>
+    <StickySection wrapperClassName="verticals-container">
       <h2 className="visually-hidden">Our Experience</h2>
-      <div className="verticals__wrapper container">
-        <VerticalsSvg />
-        <div className="verticals__description">
-          <div className="verticals__counter">
-            <span>/</span>
-            <span>03</span>
-          </div>
-          <p>
-            We’ve gained ample experience for a wide range of industries, making
-            our soilutions compliant with the specific requirements.
-          </p>
+      <VerticalsSvg />
+      <div className="verticals__description">
+        <div className="verticals__counter">
+          <span>/</span>
+          <span>03</span>
         </div>
+        <p>
+          We’ve gained ample experience for a wide range of industries, our our
+          our soilutions compliant with the specific requirements.
+        </p>
       </div>
+    </StickySection>
+
+    <StickySection wrapperClassName="verticals-list-container">
       <ScrollContainer component="ul" className="verticals__project-list">
         {projectsList.map(({ image, title, counter }) => (
           <li key={title} className="verticals__project-item">
@@ -98,6 +100,6 @@ export const Verticals = () => {
           </li>
         ))}
       </ScrollContainer>
-    </section>
-  );
-};
+    </StickySection>
+  </>
+);

@@ -2,12 +2,11 @@
 @import "/src/styles/mixins/font-mixin";
 @import "/src/styles/mixins/base";
 
-// .about {
-//   min-height: 100vh;
-// }
+.about {
+  // height: 100vh;
+}
 
 .about__wrapper {
-  margin-top: 204px;
   padding: 78px 0 46px;
   display: flex;
   justify-content: space-between;

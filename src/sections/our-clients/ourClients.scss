@@ -2,6 +2,10 @@
 @import "/src/styles/mixins/font-mixin";
 @import "/src/styles/mixins/base";
 
+.our-clients {
+  height: 150vh;
+}
+
 .our-clients__wrapper {
   padding: 145px 0;
 }

@@ -17,6 +17,7 @@ import ola2x from "../../assets/images/content/ola@2x.png";
 import olaWebp2x from "../../assets/images/content/ola@2x.webp";
 import { ReactComponent as CasesSvg } from "../../assets/images/text/cases.svg";
 import { Picture } from "../../components/Picture/Picture";
+import { StickySection } from "../../components/StickySection/StickySection";
 
 const projects = [
   {
@@ -76,24 +77,29 @@ export const Cases = () => {
   );
 
   return (
-    <section className="cases container">
-      <h2 className="visually-hidden">Portfolio</h2>
-      <div className="cases__wrapper">
-        <div className="cases__title">
-          <CasesSvg />
-          <div>
-            <span>05</span>
-            <span>/</span>
+    <>
+      <StickySection wrapperClassName="cases-container">
+        <h2 className="visually-hidden">Portfolio</h2>
+        <div className="cases__wrapper">
+          <div className="cases__title">
+            <CasesSvg />
+            <div>
+              <span>05</span>
+              <span>/</span>
+            </div>
+          </div>
+          <div className="cases__description">
+            <p>
+              Applications and portals with rich functionality that can cope
+              heavy loads adequately
+            </p>
           </div>
         </div>
-        <div className="cases__description">
-          <p>
-            Applications and portals with rich functionality that can cope with
-            heavy loads adequately
-          </p>
-        </div>
-      </div>
-      <div className="cases__slides">
+      </StickySection>
+      <StickySection
+        className="cases-slides"
+        wrapperClassName="cases-slides-container"
+      >
         <div className="cases__slides-wrapper">
           <div className="cases__preview">
             <div className="cases__preview-img"></div>
@@ -126,7 +132,7 @@ export const Cases = () => {
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </StickySection>
+    </>
   );
 };

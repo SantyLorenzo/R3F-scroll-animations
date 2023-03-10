@@ -40,6 +40,7 @@ import { ReactComponent as Thomson } from "../../assets/images/clients/thomson_r
 import { ReactComponent as WorldSkills } from "../../assets/images/clients/world-skills.svg";
 import { ReactComponent as Arrow } from "../../assets/images/icon/button/arrow.svg";
 import { ReactComponent as OurClient } from "../../assets/images/text/our-clients.svg";
+import { StickySection } from "../../components/StickySection/StickySection";
 
 interface Clients {
   firstRow: { logo: JSX.Element; story?: string }[];
@@ -171,47 +172,51 @@ const clientsList: Clients = {
 
 export const OurClients = () => {
   return (
-    <section className="our-clients">
-      <div className="our-clients__wrapper container">
-        <OurClient />
-        <div className="our-clients__description">
-          <div className="our-clients__counter">
-            <span>/</span>
-            <span>04</span>
+    <>
+      <StickySection wrapperClassName="our-clients">
+        <div className="our-clients__wrapper container">
+          <OurClient />
+          <div className="our-clients__description">
+            <div className="our-clients__counter">
+              <span>/</span>
+              <span>04</span>
+            </div>
+            <p>
+              Mercury Development's success is a reflection of our clients'
+              success. There are the companies – some featuring incredible,
+              customer-approved Case Studies – we've worked with during the last
+              23 years.
+            </p>
           </div>
-          <p>
-            Mercury Development's success is a reflection of our clients'
-            success. There are the companies – some featuring incredible,
-            customer-approved Case Studies – we've worked with during the last
-            23 years.
-          </p>
         </div>
-      </div>
-      <ScrollContainer component="table" className="our-clients__table">
-        <tr>
-          {clientsList.firstRow.map(({ logo, story }, i) => (
-            <td className="our-clients__item" key={`client-${i}-first`}>
-              {logo}
-              <>{story && <button>{story}</button>}</>
-            </td>
-          ))}
-        </tr>
-        <tr>
-          {clientsList.secondRow.map(({ logo, story }, i) => (
-            <td className="our-clients__item" key={`client-${i}-second`}>
-              {logo}
-              <>{story && <button>{story}</button>}</>
-            </td>
-          ))}
-        </tr>
-      </ScrollContainer>
-      <a href="#!" className="our-clients__more">
-        More testimonials on clutch
-        <Arrow />
-      </a>
-      <div className="our-clients__video">
-        <p>More than 1000 apps</p>
-      </div>
-    </section>
+      </StickySection>
+      <StickySection wrapperClassName="our-clients">
+        <ScrollContainer component="table" className="our-clients__table">
+          <tr>
+            {clientsList.firstRow.map(({ logo, story }, i) => (
+              <td className="our-clients__item" key={`client-${i}-first`}>
+                {logo}
+                <>{story && <button>{story}</button>}</>
+              </td>
+            ))}
+          </tr>
+          <tr>
+            {clientsList.secondRow.map(({ logo, story }, i) => (
+              <td className="our-clients__item" key={`client-${i}-second`}>
+                {logo}
+                <>{story && <button>{story}</button>}</>
+              </td>
+            ))}
+          </tr>
+        </ScrollContainer>
+        <a href="#!" className="our-clients__more">
+          More testimonials on clutch
+          <Arrow />
+        </a>
+        <div className="our-clients__video">
+          <p>More than 1000 apps</p>
+        </div>
+      </StickySection>
+    </>
   );
 };
