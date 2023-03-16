@@ -1,6 +1,17 @@
 import { Environment, Sky, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import {
+  Bloom,
+  ChromaticAberration,
+  DepthOfField,
+  DotScreen,
+  EffectComposer,
+  Glitch,
+  Noise,
+  Vignette,
+} from "@react-three/postprocessing";
 import { ReactLenis } from "@studio-freight/react-lenis";
+import { GlitchMode } from "postprocessing";
 import { Suspense } from "react";
 
 import { Footer } from "./components/Footer/Footer";
@@ -46,6 +57,37 @@ export const App = () => {
             />
             <Building />
           </Suspense>
+
+          <EffectComposer>
+            {/* <DepthOfField
+              focusDistance={0}
+              focalLength={0.02}
+              bokehScale={2}
+              height={480}
+            /> */}
+            <Bloom
+              luminanceThreshold={0}
+              luminanceSmoothing={0.9}
+              height={300}
+              opacity={0.5}
+            />
+            <Noise opacity={0.3} />
+            {/* <Glitch
+              delay={[1.5, 3.5]} // min and max glitch delay
+              duration={[0.6, 1.0]} // min and max glitch duration
+              strength={[0.3, 1.0]} // min and max glitch strength
+              mode={GlitchMode.SPORADIC} // glitch mode
+              active // turn on/off the effect (switches between "mode" prop and GlitchMode.DISABLED)
+              ratio={0.85} // Threshold for strong glitches, 0 - no weak glitches, 1 - no strong glitches.
+            /> */}
+            <ChromaticAberration offset={[0.02, 0.02]} />
+            {/* <DotScreen
+              // blendFunction={BlendFunction.NORMAL} // blend mode
+              angle={Math.PI * 0.5} // angle of the dot pattern
+              scale={1.0} // scale of the dot pattern
+            /> */}
+            <Vignette eskil={false} offset={0.1} darkness={1.1} />
+          </EffectComposer>
         </Canvas>
 
         <Header />
