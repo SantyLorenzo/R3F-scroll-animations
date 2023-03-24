@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    flex-direction: column;
+    padding: 120px 120px 56px 120px;
+    justify-content: center;
+
+    .subtitle {
+        color: #ffffff;
+        font-size: 18px;
+        margin-top: 84px;
+        margin-left: auto;
+    }
+}

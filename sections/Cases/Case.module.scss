@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    padding: 120px;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .leftSide {
+        display: flex;
+        flex-direction: row;
+
+        p {
+            margin-left: 204px;
+        }
+    }
+
+    .rightSide {
+        margin-bottom: 120px;
+        
+        p {
+            margin-top: 84px;
+        }
+    }
+}
