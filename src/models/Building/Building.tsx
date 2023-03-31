@@ -99,6 +99,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
     }
   });
 
+  //@ts-ignore
   materials["Material.002"].color = {
     r: 0,
     g: 0,
@@ -106,13 +107,15 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
     isColor: true,
   }
 
+  //@ts-ignore
   materials["Material.007"].color = {
     r: 0,
     g: 0,
     b: 0,
     isColor: true,
   }
-
+  
+  //@ts-ignore
   materials["Material.010"].color = {
     r: 0,
     g: 0,
