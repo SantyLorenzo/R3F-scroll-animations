@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    padding: 120px;
+    min-height: 100vh;
+    justify-content: space-between;
+
+    .leftSide {
+        display: flex;
+        height: 500px;
+        flex-direction: row;
+        align-items: flex-end;
+
+        p {
+            margin-bottom: 0px;
+            margin-left: 204px;
+        }
+    }
+
+    .rightSide {
+        margin-bottom: 120px;
+        
+        p {
+            margin-top: 84px;
+        }
+    }
+}

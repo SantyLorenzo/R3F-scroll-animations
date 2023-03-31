@@ -1,0 +1,73 @@
+.container {
+    min-height: 300vh;
+    display: flex;
+    flex-direction: column;
+    padding: 120px 0px 56px 0px;
+
+    .sticky {
+        top: 130px;
+    }
+
+    .titleContainer {
+        display: flex;
+        padding: 0px 120px;
+        margin-bottom: 64px;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+            font-size: 14px;
+
+            img {
+                margin-left: 12px;
+            }            
+        }
+    }
+
+    .listContainer {
+        overflow: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+        border-collapse: collapse;
+      
+        .listRow {
+            display: flex;
+            margin: 0px 120px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+      
+            &:not(:first-child) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+
+            .listItem {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 38px;
+                font-size: 12px;
+                border-right: 1px solid rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 183px;
+        border: 1px solid #FFFFFF;
+        border-radius: 25px;
+        letter-spacing: 0.2em;
+        color: #FFFFFF;
+        transition: all 0.3s ease-in-out;
+        padding: 16px 20px;
+
+        &:hover,
+        &:focus-visible {
+            background-color: white;
+            color: black;
+        }
+    }
+}

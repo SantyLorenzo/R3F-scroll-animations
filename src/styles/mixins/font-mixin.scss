@@ -1,0 +1,91 @@
+// Akrobat
+
+@mixin akrobat-regular($size: null, $height: null) {
+  font-family: "Akrobat", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+  @if $size {
+    font-size: $size + px;
+  }
+  @if $height {
+    line-height: $height + px;
+  }
+}
+
+@mixin akrobat-bold($size: null, $height: null) {
+  font-family: "Akrobat", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
+  @if $size {
+    font-size: $size + px;
+  }
+  @if $height {
+    line-height: $height + px;
+  }
+}
+
+@mixin akrobat-extrabold($size: null, $height: null) {
+  font-family: "Akrobat", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 800;
+  @if $size {
+    font-size: $size + px;
+  }
+  @if $height {
+    line-height: $height + px;
+  }
+}
+
+@mixin akrobat-black($size: null, $height: null) {
+  font-family: "Akrobat", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 900;
+  @if $size {
+    font-size: $size + px;
+  }
+  @if $height {
+    line-height: $height + px;
+  }
+}
+
+// Gotham
+
+@mixin gotham-regular($size: null, $height: null) {
+  font-family: "Gotham Pro", "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+  @if $size {
+    font-size: $size + px;
+  }
+  @if $height {
+    line-height: $height + px;
+  }
+}
+
+@mixin gotham-medium($size: null, $height: null) {
+  font-family: "Gotham Pro", "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 500;
+  @if $size {
+    font-size: $size + px;
+  }
+  @if $height {
+    line-height: $height + px;
+  }
+}
+
+@mixin gotham-bold($size: null, $height: null) {
+  font-family: "Gotham Pro", "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
+  @if $size {
+    font-size: $size + px;
+  }
+  @if $height {
+    line-height: $height + px;
+  }
+}
+
+@mixin gotham-black($size: null, $height: null) {
+  font-family: "Gotham Pro", "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 900;
+  @if $size {
+    font-size: $size + px;
+  }
+  @if $height {
+    line-height: $height + px;
+  }
+}

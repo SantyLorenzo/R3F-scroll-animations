@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    min-height: 150vh;
+    padding: 120px 0px 56px 0px;
+    align-items: flex-start;
+
+    .sticky {
+        top: 160px;
+    }
+
+    .projectsList {
+        display: flex;
+        overflow-x: auto;
+        padding: 0px 120px;
+        flex-direction: row;
+        list-style-type: none;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+
+            &:last-child {
+                border-right: 0px;
+            }
+
+
+            h2 {
+                text-align: center;
+                font-size: 40px;
+                color: #FF0044;
+                margin-bottom: 12px;
+            }
+        }
+    }
+}
