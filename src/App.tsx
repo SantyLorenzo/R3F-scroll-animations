@@ -19,7 +19,7 @@ import './styles/App.scss'
 
 function App() {
   return (
-    <ReactLenis root options={{ duration: 10 }}>
+    <ReactLenis root>
       <Canvas
         camera={{ zoom: 1.7, fov: 75 }}
         style={{ top: 0, zIndex: -1, position: "fixed" }}
