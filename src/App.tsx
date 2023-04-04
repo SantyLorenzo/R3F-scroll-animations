@@ -16,17 +16,18 @@ import { ReactLenis } from '@studio-freight/react-lenis'
 import { Building } from './models/Building/Building'
 import { Header } from './components/Header/Header'
 import './styles/App.scss'
+import { Cursor } from './components/Cursor/cursor'
 
 function App() {
   return (
     <ReactLenis root>
       <Canvas
-        camera={{ zoom: 1.7, fov: 75 }}
+        camera={{ zoom: 1.7, fov: 80 }}
         style={{ top: 0, zIndex: -1, position: "fixed" }}
       >
         <Suspense fallback={null}>
           <pointLight position={[3, 5.5, 9]} intensity={1} />
-          <pointLight position={[10, 4.5, 4.2]} intensity={0.4} />
+          {/* <pointLight position={[10, 4.5, 4.2]} intensity={0.4} /> */}
           <directionalLight position={[3, 5.5, 9]} color="white" />
           <Stars
             depth={0}
@@ -41,6 +42,8 @@ function App() {
       </Canvas>
 
       <Header />
+      
+      <Cursor />
 
       <main>
         <DevelopingTheFuture />

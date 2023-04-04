@@ -14,8 +14,9 @@ export const Windowsill = (props: JSX.IntrinsicElements["group"]) => {
         castShadow
         receiveShadow
         geometry={nodes.Windowsill_low.geometry}
-        material={materials["Material.057"]}
+        material={materials["Material.038"]}
         position={[7.62, 3.7, 9.84]}
+        scale={1}
       />
     </group>
   );

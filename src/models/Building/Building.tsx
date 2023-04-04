@@ -65,7 +65,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
     if (cameraHelperRef.current) {
       state.camera.position.copy(cameraHelperRef.current.position);
       state.camera.rotation.copy(cameraHelperRef.current.rotation);
-      state.camera.rotation.y += Math.PI;
+      state.camera.rotation.y += 3.2;
     }
 
     if (
@@ -99,7 +99,6 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
     }
   });
 
-  //@ts-ignore
   materials["Material.002"].color = {
     r: 0,
     g: 0,
@@ -107,15 +106,13 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
     isColor: true,
   }
 
-  //@ts-ignore
   materials["Material.007"].color = {
     r: 0,
     g: 0,
     b: 0,
     isColor: true,
   }
-  
-  //@ts-ignore
+
   materials["Material.010"].color = {
     r: 0,
     g: 0,
@@ -335,6 +332,15 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           material={nodes.Cube003.material}
           position={[6.21, 2.99, 9.16]}
           scale={[0.04, 1, 1]}
+        />
+        <mesh
+          geometry={nodes.Object_what_we_do.geometry}
+          material={nodes.Object_what_we_do.material}
+          name="Object_what_we_do"
+          castShadow
+          receiveShadow
+          position={[3.69, 9.19, 3.86]}
+          scale={0.39}
         />
         <mesh
           ref={movingAppsRef}

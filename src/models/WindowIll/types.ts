@@ -7,6 +7,6 @@ export type GLTFResult = GLTF & {
     Windowsill_low: THREE.Mesh;
   };
   materials: {
-    ["Material.057"]: THREE.MeshStandardMaterial;
+    ["Material.038"]: THREE.MeshStandardMaterial;
   };
 };

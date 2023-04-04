@@ -18,8 +18,9 @@
     }
 
     .marquee {
-        position: absolute;
+        z-index: 1;
         top: 11%;
+        position: absolute;
     }
 
     .itemsContainer {
@@ -55,7 +56,6 @@
     }
 
     .currentItemContainer {
-        z-index: 2;
         display: flex;
         align-items: center;
         flex-direction: column;

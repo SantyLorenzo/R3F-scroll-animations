@@ -6,12 +6,11 @@ import { GLTFResult } from "./types";
 export const Stand = (props: JSX.IntrinsicElements["group"]) => {
   const { nodes, materials } = useGLTF(standModel) as unknown as GLTFResult;
 
-  //@ts-ignore
   materials["Material.028"].color = {
     r: 0,
     g: 0,
     b: 0,
-    isColor: true,
+    isColor: false,
   }
   return (
     <group {...props} dispose={null}>
