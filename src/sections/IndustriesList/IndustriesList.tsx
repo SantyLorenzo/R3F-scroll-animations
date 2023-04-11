@@ -33,7 +33,7 @@ export const IndustriesList = () => {
   ];
 
   return (
-    <StickySection className={styles.sticky} wrapperClassName={styles.container}>
+    <StickySection id='industries-list' className={styles.sticky} wrapperClassName={styles.container}>
       <ul className={styles.projectsList}>
         {projectsList.map(({ image, title, counter }) => (
           <li key={title}>

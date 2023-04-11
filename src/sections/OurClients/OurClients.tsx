@@ -62,7 +62,7 @@ export const OurClients = () => {
   };
 
     return (
-      <StickySection className={styles.sticky} wrapperClassName={styles.container}>
+      <StickySection id='our-clients' className={styles.sticky} wrapperClassName={styles.container}>
           <div className={styles.titleContainer}>
             <h2>OUR CLIENTS</h2>
             <button>

@@ -3,7 +3,7 @@ import styles from './Case.module.scss'
 
 export const Cases = () => {
     return (
-        <div className={styles.container}>
+        <section id="cases" className={styles.container}>
             <div className={styles.leftSide}>
                 <img
                     src="/images/total_cases.svg"
@@ -28,6 +28,6 @@ export const Cases = () => {
                     <br /> can cope with heavy loads adequately
                 </p>
             </div>
-        </div>
+        </section>
     )
 }

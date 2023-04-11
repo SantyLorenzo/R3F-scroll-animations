@@ -1,12 +1,34 @@
 
 import styles from './WhatWeDo.module.scss'
 import Marquee from "react-fast-marquee";
-import { StickySection } from '../../components/StickySection/StickySection';
+import { useLayoutEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 export const WhatWeDo = () => {
+    const containerRef = useRef(null)
+
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            const timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "-=70 top",
+                    end: "bottom 80%",
+                    scrub: 1,
+                    pin: true,
+                    toggleActions: "play reverse play reverse",
+                }
+            })
+            
+            timeline.fromTo(containerRef.current, { opacity: 0 }, { opacity: 1 });
+            timeline.fromTo(containerRef.current, { opacity: 1 }, { opacity: 0 });
+        }, containerRef);
+
+        return () => ctx.revert();
+        }, []);
 
     return (
-        <StickySection wrapperClassName={styles.container}>
+        <section id='what-we-do' ref={containerRef} className={styles.container}>
             <Marquee gradient={false} className={styles.marquee}>
                 <img
                     src="/images/what_we_do.svg"
@@ -79,21 +101,23 @@ export const WhatWeDo = () => {
                 </div>
 
                 <div className={styles.currentItemContainer}>
-                    <img
-                        src="/images/phone.svg"
-                        alt="Developing title img"
-                        width={200}
-                        height={350}
-                    />
                     <h2>
-                        MOBILE <br /> DEVELOPMENT
+                        MOBILE DEVELOPMENT
                     </h2>
                     <p className={styles.currentItemDescription}>
                         Our highly accomplished and professionally trained <br />
                         iOS, Android developers, and designers make sure <br />
                         we deliver crisp, top-notch mobile applications
                     </p>
-                    <button type="button">Watch more</button>
+                    <button type="button">
+                        Watch more
+                        <img
+                            src="/images/arrow.svg"
+                            alt="Developing title img"
+                            width={16}
+                            height={16}
+                        />
+                        </button>
                 </div>
                 
                 <div className={styles.itemsRow}>
@@ -152,6 +176,6 @@ export const WhatWeDo = () => {
 
                 </div>
             </div>
-        </StickySection>
+        </section>
     )
 }

@@ -32,35 +32,26 @@ export const DevelopingTheFuture = () => {
     ]
 
     useLayoutEffect(() => {
-
-        // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
         let ctx = gsap.context(() => {
-
-
             const timeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top center",
+                    start: "top top",
                     end: "bottom 80%",
                     scrub: true,
-                    markers: true,
+                    toggleActions: "play reverse play reverse",
                 }
             })
+            
+            timeline.fromTo(containerRef.current, { opacity: 1 }, { opacity: 0 });
+        }, containerRef);
 
-            
-            timeline.to(containerRef.current, { opacity: 1, duration: 2 });
-            timeline.to(containerRef.current, { opacity: 0, duration: 1 });
-            // gsap.to(containerRef.current, { opacity: 0, duration: 2 }, 0.9)
-            
-        }, containerRef); // <- IMPORTANT! Scopes selector text
-        
-        return () => ctx.revert(); // cleanup
-        
+        return () => ctx.revert();
         }, []);
 
 
     return (
-        <div ref={containerRef} className={styles.container}>
+        <section id='developing-the-future' ref={containerRef} className={styles.container}>
             <span>
                 <img
                     src="/images/developing.svg"
@@ -120,6 +111,6 @@ export const DevelopingTheFuture = () => {
                     </div>
                 ))}
             </aside>
-        </div>
+        </section>
     )
 }

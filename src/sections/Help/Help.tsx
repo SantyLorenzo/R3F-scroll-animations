@@ -5,7 +5,7 @@ import styles from './Help.module.scss'
 
 export const Help = () => {
     return (
-      <section className={styles.container}>
+      <section id="help" className={styles.container}>
         <div className={styles.formContainer}>
           <div>
             <h3>Need help?</h3>

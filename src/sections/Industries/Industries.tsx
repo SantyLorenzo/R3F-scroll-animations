@@ -1,63 +1,44 @@
 
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import { useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import styles from './Industries.module.scss'
 
 
 export const Industries = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef(null)
 
-    gsap.registerPlugin(ScrollTrigger);
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            const timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: 1,
+                    pin: true,
+                }
+            })
+            
+            timeline.fromTo(containerRef.current,  { y: -500 }, { y: 0 });
+            timeline.fromTo(containerRef.current,  { y: 0 }, {x: -5000, y: 5000 });
+        }, containerRef);
 
-    const rx = window.innerWidth < 1000 ? window.innerWidth / 1200 : 1
-    const ry = window.innerHeight < 700 ? window.innerHeight / 1200 : 1
-
-    const path = [
-        { x: 800, y: -200 },
-        { x: 400, y: 60 },
-        { x: 10, y: 10 },
-        ]
-
-    const scaledPath = path.map(({ x, y }) => {
-    return {
-        x: x * rx,
-        y: y * ry
-    }
-    })
-
-    const tl = gsap.timeline({
-        scrollTrigger: {
-          scrub: 1.5,
-        },
-      })
-
-      tl.to(containerRef, {
-        motionPath: {
-          path: scaledPath,
-          align: 'self',
-          alignOrigin: [0.5, 0.5],
-          autoRotate: true
-        },
-        duration: 10,
-        immediateRender: true,
-        // ease: 'power4'
-      })
-      
+        return () => ctx.revert();
+    }, []);
 
     return (
-        <div  ref={containerRef} className={styles.container}>
-            <img
-                src="/images/industries.svg"
-                alt="Developing title img"
-                width={800}
-                height={140}
-            />
+        <section id='industries' ref={containerRef} className={styles.container}>
+          <img
+              src="/images/industries.svg"
+              alt="Developing title img"
+              width={800}
+              height={140}
+          />
 
-            <p className={styles.subtitle}>
-                We’ve gained ample experience for a wide range of industries, making our
-                <br /> solutions compliant with the specific requirements.
-            </p>
-        </div>
+          <p className={styles.subtitle}>
+              We’ve gained ample experience for a wide range of industries, making our
+              <br /> solutions compliant with the specific requirements.
+          </p>
+        </section>
     )
 }

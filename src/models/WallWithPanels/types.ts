@@ -9,3 +9,8 @@ export type GLTFResult = GLTF & {
     ["Material.086"]: THREE.MeshStandardMaterial;
   };
 };
+
+export type WallWithPanelsProps = 
+  JSX.IntrinsicElements["group"] & {
+    position?: number[]
+  }

@@ -63,7 +63,7 @@ export const CasesShowcase = () => {
     );
 
     return (
-        <section className={styles.container}>
+        <section id='cases-showcase' className={styles.container}>
             <div className={styles.leftSide}>
                 <div>
                     <p className={styles.caseTitle}>[ Case ]</p>

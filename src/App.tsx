@@ -29,6 +29,7 @@ function App() {
           <pointLight position={[3, 5.5, 9]} intensity={1} />
           {/* <pointLight position={[10, 4.5, 4.2]} intensity={0.4} /> */}
           <directionalLight position={[3, 5.5, 9]} color="white" />
+          <ambientLight intensity={0.5} />
           <Stars
             depth={0}
             factor={4}

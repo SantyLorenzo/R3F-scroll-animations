@@ -3,11 +3,7 @@
     min-height: 150vh;
     position: relative;
     flex-direction: column;
-    padding: 240px 120px 56px 120px;
-
-    .sticky {
-        top: 240px;
-    }
+    padding: 140px 120px 56px 120px;
 
     .territorialPresence {
         width: 274px;
@@ -24,7 +20,7 @@
     }
 
     .countriesContainer {
-        width: 290px;
+        width: 400px;
         margin-left: auto;
 
         .countriesImg {

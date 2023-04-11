@@ -3,7 +3,7 @@ import styles from './MoreApps.module.scss'
 
 export const MoreApps = () => {
     return (
-        <div className={styles.container}>
+        <section id="more-apps" className={styles.container}>
             <img
                 src="/images/100apps.svg"
                 alt="Developing title img"
@@ -17,6 +17,6 @@ export const MoreApps = () => {
                 width={340}
                 height={120}
             />
-        </div>
+        </section>
     )
 }

@@ -13,8 +13,7 @@ export const Pillars = (props: JSX.IntrinsicElements["group"]) => {
         receiveShadow
         geometry={nodes.Element_01_low.geometry}
         material={materials["Material.082"]}
-        position={[3, 3.18, 9.1]}
-        rotation={[0, Math.PI / 2, 0]}
+        position={[4.8, 2.72, 6.2]}
       />
     </group>
   );

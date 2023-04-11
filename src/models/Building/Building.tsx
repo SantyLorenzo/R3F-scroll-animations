@@ -1,7 +1,7 @@
 "use client"
 
-import { useAnimations, useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { OrbitControls, useAnimations, useGLTF, useScroll } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useLenis } from "@studio-freight/react-lenis";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
@@ -23,6 +23,23 @@ import { Windowsill } from "../WindowIll/WindowIll";
 import { Wires } from "../Wires/Wires";
 import buildingModel from "./building.glb";
 import { GLTFAction, GLTFResult } from "./types";
+import { Mobile } from "../Mobile/Mobile";
+import { gsap } from "gsap";
+import { CustomEase } from "gsap/CustomEase";
+import { WallWithPorthole } from "../WallWithPorthole/WallWithPorthole";
+import { Pipe } from "../Pipe/Pipe";
+import { Projector } from "../Projector/Projector";
+import { ProjectorLight } from "../ProjectorLight/ProjectorLight";
+import { Showreel } from "../Showreel/Showreel";
+import { FloorToTunnel } from "../FloorToTunnel/FloorToTunnel";
+import { WallInTheTunnel } from "../WallInTheTunnel/WallInTheTunnel";
+import { FrontWallIntoTheTunnel } from "../FrontWallIntoTheTunnel/FrontWallIntoTheTunnel";
+import { LeftWallIntoTheTunnel } from "../LeftWallIntoTheTunnel/LeftWallIntoTheTunnel";
+import { FrontWall } from "../CasesRoom/FrontWall/FrontWall";
+import { BackWall } from "../CasesRoom/BackWall/BackWall";
+import { RightWall } from "../CasesRoom/RightWall/RightWall";
+
+gsap.registerPlugin(CustomEase)
 
 export const Building = (props: JSX.IntrinsicElements["group"]) => {
   const group = useRef<THREE.Group>(null);
@@ -33,20 +50,19 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
   ) as unknown as GLTFResult;
   const { actions } = useAnimations<GLTFAction>(animations, group);
   const [mainAnimationTime, setMainAnimationTime] = useState(0);
-
+  
   useLenis((scrollData: any) => {
     if (actions["cameraHelperPath"]) {
-      // play the animations based on the offset of the scroll
       actions["cameraHelperPath"].time = THREE.MathUtils.lerp(
-        actions["cameraHelperPath"].time,
+        actions["cameraHelperPath"].time ,
         actions["cameraHelperPath"].getClip().duration * scrollData.progress,
         1
       );
     }
   });
 
+  // initialize animations
   useEffect(() => {
-    // initialize animations
     if (
       actions["topDoor"] &&
       actions["spinsApps"] &&
@@ -75,7 +91,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
       actions["cameraHelperPath"]
     ) {
       // change this
-      setMainAnimationTime(actions["cameraHelperPath"].time);
+      // setMainAnimationTime(actions["cameraHelperPath"].time);
 
       actions["bottomDoor"].time =
         (actions["cameraHelperPath"].time /
@@ -98,28 +114,6 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
       setMainAnimationTime(actions["cameraHelperPath"].time);
     }
   });
-
-  materials["Material.002"].color = {
-    r: 0,
-    g: 0,
-    b: 0,
-    isColor: true,
-  }
-
-  materials["Material.007"].color = {
-    r: 0,
-    g: 0,
-    b: 0,
-    isColor: true,
-  }
-
-  materials["Material.010"].color = {
-    r: 0,
-    g: 0,
-    b: 0,
-    isColor: true,
-  }
-
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -144,16 +138,6 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           position={[7.7, 3.88, 9.31]}
           rotation={[0, -0.25, 0]}
           scale={0.09}
-        />
-        <mesh
-          visible={false}
-          name="First_room"
-          castShadow
-          receiveShadow
-          geometry={nodes.First_room.geometry}
-          material={nodes.First_room.material}
-          position={[8.18, 3.94, 9.17]}
-          scale={0.19}
         />
         <mesh
           name="Handrail"
@@ -233,15 +217,6 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           position={[-7.15, -6.95, -4.11]}
           rotation={[0, 0.14, Math.PI]}
           scale={[-1.24, -1, -0.03]}
-        />
-        <mesh
-          name="Second_room"
-          castShadow
-          receiveShadow
-          geometry={nodes.Second_room.geometry}
-          material={materials["Material.002"]}
-          position={[3.76, 5.23, 8.76]}
-          scale={0.19}
         />
         <mesh
           name="Ship_skin"
@@ -333,40 +308,44 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           position={[6.21, 2.99, 9.16]}
           scale={[0.04, 1, 1]}
         />
-        <mesh
-          geometry={nodes.Object_what_we_do.geometry}
-          material={nodes.Object_what_we_do.material}
-          name="Object_what_we_do"
-          castShadow
-          receiveShadow
-          position={[3.69, 9.19, 3.86]}
-          scale={0.39}
-        />
-        <mesh
-          ref={movingAppsRef}
-          name="1000+_apps"
-          castShadow
-          receiveShadow
-          geometry={nodes["1000+_apps"].geometry}
-          material={nodes["1000+_apps"].material}
-          position={[-0.09, -4.23, -0.05]}
-          scale={1}
-        />
-        <Doors mainAnimationTime={mainAnimationTime} />
-        <CeilingMain />
-        <Partition />
-        <Panel />
-        <Handrails />
+
+        {/* window room */}
         <Window />
-        <Box />
-        <Wires />
         <Windowsill />
-        <MiniTerminal />
-        <ReceptionFloor />
-        {/* <Pillars /> */}
-        <Stand />
+        <Handrails />
+        <Panel />
         <Hatch />
+        <Wires />
+        <MiniTerminal />
+        <Doors mainAnimationTime={mainAnimationTime} />
+
+        {/* first room */}
+        <Mobile />
+        <Pipe />
+        <CeilingMain />
+        <Box />
+        <WallWithPorthole />
+        <ReceptionFloor />
+        {/* ?? don't know the position ?? <Partition /> */}
+
+        {/* first room wall */}
+        <Pillars />
+        <Stand />
         <WallWithPanels />
+        <Showreel />
+        <ProjectorLight />
+        <Projector />
+
+        {/* second room */}
+        <FloorToTunnel />
+        <WallInTheTunnel />
+        <LeftWallIntoTheTunnel />
+        <FrontWallIntoTheTunnel />
+
+        {/* cases room */}
+        <FrontWall />
+        <BackWall />
+        <RightWall />
       </group>
     </group>
   );

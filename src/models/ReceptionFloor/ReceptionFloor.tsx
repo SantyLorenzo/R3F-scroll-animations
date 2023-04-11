@@ -15,7 +15,7 @@ export const ReceptionFloor = (props: JSX.IntrinsicElements["group"]) => {
         receiveShadow
         geometry={nodes.Reception_floop_low.geometry}
         material={materials["Material.073"]}
-        position={[3, 3.18, 9.1]}
+        position={[3, 3.18, 8.9]}
         scale={1.2}
       />
     </group>
