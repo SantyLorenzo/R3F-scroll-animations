@@ -38,6 +38,7 @@ import { LeftWallIntoTheTunnel } from "../LeftWallIntoTheTunnel/LeftWallIntoTheT
 import { FrontWall } from "../CasesRoom/FrontWall/FrontWall";
 import { BackWall } from "../CasesRoom/BackWall/BackWall";
 import { RightWall } from "../CasesRoom/RightWall/RightWall";
+import { CaseMobile } from "../CasesRoom/CaseMobile/CaseMobile";
 
 gsap.registerPlugin(CustomEase)
 
@@ -166,16 +167,6 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           rotation={[0, -1.42, 0]}
           scale={[0.19, 0.19, 0.31]}
         />
-        <mesh
-          name="Object_case"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_case.geometry}
-          material={nodes.Object_case.material}
-          position={[-4.28, -6.06, -4.46]}
-          scale={0.36}
-        />
-
         <mesh
           name="Object_worldwide"
           castShadow
@@ -343,6 +334,7 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
         <FrontWall />
         <BackWall />
         <RightWall />
+        <CaseMobile />
       </group>
     </group>
   );
