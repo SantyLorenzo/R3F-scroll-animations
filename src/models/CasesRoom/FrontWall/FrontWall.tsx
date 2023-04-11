@@ -7,7 +7,7 @@ export const FrontWall = (props: JSX.IntrinsicElements["group"]) => {
   const { nodes, materials } = useGLTF(
     caseFrontWallModel
   ) as unknown as GLTFResult;
-  const { x, y, z } = useControls({ x: -4.1, y: -5.87, z: -7.8 })
+  // const { x, y, z } = useControls({ x: -4.1, y: -5.87, z: -7.8 })
 
   return (
     <group {...props} dispose={null}>
@@ -16,9 +16,9 @@ export const FrontWall = (props: JSX.IntrinsicElements["group"]) => {
         receiveShadow
         geometry={nodes.case_front_wall_low.geometry}
         material={materials["Material.172"]}
-        // position={[-4.1, -5.87, -7.8]}
+        position={[-4.1, -5.87, -7.8]}
         rotation={[-Math.PI, 1.1, -Math.PI]}
-        position={[x, y, z]}
+        // position={[x, y, z]}
       />
     </group>
 

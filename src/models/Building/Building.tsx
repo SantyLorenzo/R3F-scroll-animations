@@ -43,7 +43,7 @@ gsap.registerPlugin(CustomEase)
 
 export const Building = (props: JSX.IntrinsicElements["group"]) => {
   const group = useRef<THREE.Group>(null);
-  const movingAppsRef = useRef<THREE.Mesh>(null);
+  // const movingAppsRef = useRef<THREE.Mesh>(null);
   const cameraHelperRef = useRef<THREE.Mesh>(null);
   const { nodes, materials, animations } = useGLTF(
     buildingModel
@@ -65,14 +65,12 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
   useEffect(() => {
     if (
       actions["topDoor"] &&
-      actions["spinsApps"] &&
       actions["bottomDoor"] &&
       actions["cameraHelperPath"]
     ) {
       actions["cameraHelperPath"].play().paused = true;
       actions["topDoor"].play().paused = true;
       actions["bottomDoor"].play().paused = true;
-      actions["spinsApps"].play().paused = true;
     }
   }, []);
 
@@ -86,12 +84,11 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
 
     if (
       actions["topDoor"] &&
-      actions["spinsApps"] &&
       actions["bottomDoor"] &&
       actions["cameraHelperPath"]
     ) {
       // change this
-      // setMainAnimationTime(actions["cameraHelperPath"].time);
+      setMainAnimationTime(actions["cameraHelperPath"].time);
 
       actions["bottomDoor"].time =
         (actions["cameraHelperPath"].time /
@@ -103,13 +100,13 @@ export const Building = (props: JSX.IntrinsicElements["group"]) => {
           actions["topDoor"].getClip().duration) *
         actions["topDoor"].getClip().duration;
 
-      if (actions["cameraHelperPath"].time > 30) {
-        actions["spinsApps"].paused = false;
-      }
+      // if (actions["cameraHelperPath"].time > 30) {
+      //   actions["spinsApps"].paused = false;
+      // }
 
-      if (actions["cameraHelperPath"].time > 35) {
-        actions["spinsApps"].paused = true;
-      }
+      // if (actions["cameraHelperPath"].time > 35) {
+      //   actions["spinsApps"].paused = true;
+      // }
 
       setMainAnimationTime(actions["cameraHelperPath"].time);
     }
