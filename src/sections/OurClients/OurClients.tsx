@@ -62,7 +62,7 @@ export const OurClients = () => {
   };
 
     return (
-      <StickySection id='our-clients' className={styles.sticky} wrapperClassName={styles.container}>
+      <section id='our-clients' className={styles.container}>
           <div className={styles.titleContainer}>
             <h2>OUR CLIENTS</h2>
             <button>
@@ -105,6 +105,6 @@ export const OurClients = () => {
                     ))}
                 </div>
             </div>
-      </StickySection>
+      </section>
     )
 }

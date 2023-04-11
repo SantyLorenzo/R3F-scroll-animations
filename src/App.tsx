@@ -52,7 +52,7 @@ function App() {
         <Industries />
         <IndustriesList />
         <OurClients />
-        <MoreApps />
+        {/* <MoreApps /> */}
         <Cases />
         <CasesShowcase />
         <Help />

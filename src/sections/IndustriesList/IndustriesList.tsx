@@ -33,7 +33,7 @@ export const IndustriesList = () => {
   ];
 
   return (
-    <StickySection id='industries-list' className={styles.sticky} wrapperClassName={styles.container}>
+    <section id='industries-list' className={styles.container}>
       <ul className={styles.projectsList}>
         {projectsList.map(({ image, title, counter }) => (
           <li key={title}>
@@ -48,6 +48,6 @@ export const IndustriesList = () => {
           </li>
         ))}
       </ul>
-    </StickySection>
+    </section>
   )
 }
