@@ -16,7 +16,7 @@ import { ReactLenis } from '@studio-freight/react-lenis'
 import { Building } from './models/Building/Building'
 import { Header } from './components/Header/Header'
 import './styles/App.scss'
-import { Cursor } from './components/Cursor/cursor'
+import { Cursor } from './components/Cursor/Cursor'
 
 function App() {
   return (
