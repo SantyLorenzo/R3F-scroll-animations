@@ -83,8 +83,7 @@ export const DevelopingTheFuture = () => {
             />
 
             <p className={styles.subtitle}>
-                Proven by startups with core technologies by 
-                Mercury and sold <br/> to Fortune 500 companies.
+                Proven by startups with core technologies and sold <br/> to Fortune 500 companies.
             </p>
 
             <span className={styles.span}>Scroll down</span>

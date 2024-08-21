@@ -16,9 +16,9 @@ export const Help = () => {
               </p>
               <a
                 className={styles.contactMail}
-                href="mailto:sales@mercurydevelopment.com"
+                href="mailto:sales@development.com"
               >
-                sales@mercurydevelopment.com
+                sales@development.com
               </a>
               <a
                 className={styles.contactPhone}

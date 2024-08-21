@@ -17,6 +17,7 @@ export const Header = () => {
                 alt="Mercury logotype"
                 width={180}
                 height={50}
+                style={{ visibility: 'hidden' }}
             />
 
             <ul>
